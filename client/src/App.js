@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Adopt from './pages/Adopt';
+import Place from './pages/Place';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import SingleThought from './pages/SingleThought';
@@ -53,6 +54,9 @@ function App() {
             </Route>
             <Route exact path="/adopt">
               <Adopt />
+            </Route>
+            <Route exact path="/place">
+              <Place />
             </Route>
             <Route exact path="/login">
               <Login />

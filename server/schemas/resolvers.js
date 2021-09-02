@@ -16,7 +16,6 @@ const resolvers = {
         populate: 'pokemon'
       });
     },
-
     // thoughts: async (parent, { username }) => {
     //   const params = username ? { username } : {};
     //   return Thought.find(params).sort({ createdAt: -1 });
@@ -39,12 +38,6 @@ const resolvers = {
       // return await Pokemon.findOne({ _id: pokemonId }).populate('adoption');
       return await Pokemon.findOne({ _id: pokemonId });
     },
-
-    // adoptions: async (parent, { username }) => {
-    //   const params = username ? { username } : {};
-    //   return await Adoption.find(params).sort({ createdAt: -1 });
-    // },
-
 
     me: async (parent, args, context) => {
       if (context.user) {
@@ -94,7 +87,7 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
     // adding adoption
-    addAdoption: async (parent, { name, level, attack, defense, description }, context) => {
+    addAdoption: async (parent, { name, level, attack, defense, description, pokemon }, context) => {
       if (context.user) {
         const adoption = await Adoption.create({
           name,
@@ -105,7 +98,6 @@ const resolvers = {
           pokemon,
           // need to figure this out . . .
           // pokemon: context.user.username,
-
         });
 
         await User.findOneAndUpdate(
@@ -117,7 +109,6 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-
 
     addComment: async (parent, { thoughtId, commentText }, context) => {
       if (context.user) {

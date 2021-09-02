@@ -51,6 +51,9 @@ const Header = () => {
       <Nav.Item>
         <Nav.Link href="/adopt">Adopt</Nav.Link>
       </Nav.Item>
+      <Nav.Item>
+        <Nav.Link href="/place">Place Pokemon up for Adoption</Nav.Link>
+      </Nav.Item>
 
         {Auth.loggedIn() ? (
           <>
