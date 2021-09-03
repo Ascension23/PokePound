@@ -30,3 +30,14 @@ export const QUERY_ME = gql`
     }
   }
 `;
+
+export const QUERY_ADOPTIONS = gql`
+  query adoptions {
+    adoptions {
+      _id
+      name
+      description
+      createdAt
+    }
+  }
+`;

@@ -16,9 +16,12 @@ const resolvers = {
         populate: 'pokemon'
       });
     },
-    adoptions: async (parent, { username }) => {
-      const params = username ? { username } : {};
-      return Adoption.find(params).sort({ createdAt: -1 });
+    // adoptions: async (parent, { username }) => {
+    //   const params = username ? { username } : {};
+    //   return Adoption.find(params).sort({ createdAt: -1 });
+    // },
+    adoptions: async () => {
+      return Adoption.find({}).sort({ createdAt: -1 });
     },
     adoption: async (parent, { adoptionId }) => {
       return Adoption.findOne({ _id: adoptionId });

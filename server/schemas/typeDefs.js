@@ -12,11 +12,8 @@ const typeDefs = gql`
   type Adoption {
     _id: ID
     name: String
-    level: Int
-    attack: Int
-    defense: Int
     description: String
-    pokemon: Pokemon
+    createdAt: String
   }
 
   type Pokemon {
@@ -46,7 +43,7 @@ const typeDefs = gql`
     user(username: String!): User
 
     adoptions: [Adoption]
-    adoption(id: ID!): Adoption
+    adoption(adoptionId: ID!): Adoption
 
     pokemons: [Pokemon]
     pokemon(id: ID!): Pokemon
