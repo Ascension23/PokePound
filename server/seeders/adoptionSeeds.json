@@ -1,37 +1,22 @@
 [
   {
     "name": "Stanky",
-    "level": 45,
-    "attack": 49,
-    "defense": 49,
     "description": "Loves waffles."
   },
   {
     "name": "Fido",
-    "level": 25,
-    "attack": 99,
-    "defense": 119,
     "description": "Plays a mean game of fetch."
   },
   {
     "name": "Milly",
-    "level": 15,
-    "attack": 39,
-    "defense": 49,
     "description": "Will eat basil."
   },
   {
     "name": "Jar Jar",
-    "level": 15,
-    "attack": 10,
-    "defense": 19,
     "description": "Will eat playdough."
   },
   {
     "name": "Rocky",
-    "level": 45,
-    "attack": 99,
-    "defense": 99,
     "description": "Shoots to kill."
   }
 ]

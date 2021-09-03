@@ -24,50 +24,12 @@ export const ADD_USER = gql`
   }
 `;
 
-export const ADD_THOUGHT = gql`
-  mutation addThought($thoughtText: String!) {
-    addThought(thoughtText: $thoughtText) {
-      _id
-      thoughtText
-      thoughtAuthor
-      createdAt
-      comments {
-        _id
-        commentText
-      }
-    }
-  }
-`;
-
 export const ADD_ADOPTION = gql`
-  mutation addAdoption($name: String!, $level: Int!, $attack: Int!, $defense: Int!, $description: String!, $pokemon: String!) {
-    addAdoption(name: $name, level: $level, attack: $attack, defense: $defense, description: $description, pokemon: $pokemon) {
+  mutation addAdoption($name: String!, $description: String!) {
+    addAdoption(name: $name, description: $description) {
       _id
       name
-      level
-      attack
-      defense
       description
-      pokemon {
-        name
-      }
-      createdAt
-    }
-  }
-`;
-
-export const ADD_COMMENT = gql`
-  mutation addComment($thoughtId: ID!, $commentText: String!) {
-    addComment(thoughtId: $thoughtId, commentText: $commentText) {
-      _id
-      thoughtText
-      thoughtAuthor
-      createdAt
-      comments {
-        _id
-        commentText
-        createdAt
-      }
     }
   }
 `;

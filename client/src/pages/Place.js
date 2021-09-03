@@ -1,26 +1,22 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Button, Form } from 'react-bootstrap';
 
 import { useMutation } from '@apollo/client';
 import { ADD_ADOPTION } from '../utils/mutations';
 
-import Auth from '../utils/auth';
+// import Auth from '../utils/auth';
 
 const Place = () => {
   const [formState, setFormState] = useState({
     name: '',
-    level: '',
-    attack: '',
-    defense: '',
     description: '',
-    pokemon: '',
   });
 
-  const [addAdoption, { error }] = useMutation(ADD_ADOPTION);
+  const [addAdoption, { error, data }] = useMutation(ADD_ADOPTION);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-
     setFormState({
       ...formState,
       [name]: value,
@@ -36,7 +32,8 @@ const Place = () => {
         variables: { ...formState },
       });
 
-      // Auth.login(data.addUser.token);
+      // Auth.getToken(data.addAdoption.token);
+      
     } catch (e) {
       console.error(e);
     }
@@ -48,74 +45,31 @@ const Place = () => {
         <div className="card">
           <h4 className="card-header bg-dark text-light p-2">Place Pokemon up for Adoption</h4>
           <div className="card-body">
-          {Auth.loggedIn() ? (
-            <>
-              <form onSubmit={handleFormSubmit}>
-                <input
-                  className="form-input"
-                  placeholder="name"
-                  name="name"
-                  type="text"
-                  value={formState.name}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="level"
-                  name="level"
-                  type="text"
-                  value={formState.level}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="attack"
-                  name="attack"
-                  type="text"
-                  value={formState.attack}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="defense"
-                  name="defense"
-                  type="text"
-                  value={formState.defense}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="description"
-                  name="description"
-                  type="text"
-                  value={formState.description}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="pokemon"
-                  name="pokemon"
-                  type="text"
-                  value={formState.pokemon}
-                  onChange={handleChange}
-                />
-                <button
-                  className="btn btn-block btn-primary"
-                  style={{ cursor: 'pointer' }}
-                  type="submit"
-                >
-                  Submit
-                </button>
-              </form>
-              </>
-
-            ) : (
+            {data ? (
               <p>
-                You need to be logged in to share your thoughts. Please{' '}
-                <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+                Success! You may now head{' '}
+                <Link to="/">back to the homepage.</Link>
               </p>
+            ) : (
+              <Form onSubmit={handleFormSubmit}>
+                <Form.Group className="mb-3" controlId="formName">
+                  <Form.Label>name</Form.Label>
+                  <Form.Control type="text" name="name" placeholder="name . . ." value={formState.name} onChange={handleChange}/>
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Label>description</Form.Label>
+                  <Form.Control type="text" name="description" placeholder="description" value={formState.description} onChange={handleChange}/>
+                </Form.Group>
+
+                <Button variant="primary" type="submit">Submit</Button>
+              </Form>
             )}
 
+            {error && (
+              <div className="my-3 p-3 bg-danger text-white">
+                {error.message}
+              </div>
+            )}
           </div>
         </div>
       </div>
