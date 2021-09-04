@@ -1,6 +1,8 @@
 import React from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
+import AdoptList from '../components/AdoptList';
+
 
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 
@@ -31,14 +33,22 @@ const Profile = () => {
         </h2>
 
         <div className="col-12 col-md-10 mb-5">
+          <h1>your listed adoptions</h1>
+          <AdoptList
+            adoptions={user.adoptions}
+            title={`${user.username}'s adoptions...`}
+            showTitle={false}
+            showUsername={false}
+          />
+
         </div>
-        {!userParam && (
+        {/* {!userParam && (
           <div
             className="col-12 col-md-10 mb-3 p-3"
             style={{ border: '1px dotted #1a1a1a' }}
           >
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );

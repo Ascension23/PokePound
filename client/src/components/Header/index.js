@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Nav, Button } from 'react-bootstrap';
+import { Navbar, Nav, Button, Container } from 'react-bootstrap';
 import Auth from '../../utils/auth';
 
 const Header = () => {
@@ -9,41 +9,32 @@ const Header = () => {
     Auth.logout();
   };
   return (
-
-    <Nav className="justify-content-end" activeKey="/home">
-      <Nav.Item>
-        <Nav.Link href="/">Home</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link href="/adopt">Adopt!</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link href="/place">Place Pokemon up for Adoption</Nav.Link>
-      </Nav.Item>
-
-        {Auth.loggedIn() ? (
-          <>
-            <Nav.Item>
+    
+    <Navbar bg="light" expand="lg">
+      <Container>
+        <Navbar.Brand href="/">poke pound</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/adopt">Adopt</Nav.Link>
+            <Nav.Link href="/place">Place Pokemon up for Adoption</Nav.Link>
+          {Auth.loggedIn() ? (
+            <>
               <Nav.Link href="/me">{Auth.getProfile().data.username}'s profile</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
               <Nav.Link onClick={logout}>Log Out</Nav.Link>
-            </Nav.Item>
-            {/* <Button variant="secondary" onClick={logout}>
-              Logout
-            </Button> */}
-          </>
-        ) : (
-          <>
-            <Nav.Item>
+            </>
+          ) : (
+            <>
               <Nav.Link href="/signup">Sign Up</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
               <Nav.Link href="login">Log In</Nav.Link>
-            </Nav.Item>
-          </>
-        )}
-    </Nav>
+            </>
+          )}
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+
   );
 };
 
