@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Form, Select } from 'react-bootstrap';
 
 import { useMutation } from '@apollo/client';
 import { ADD_ADOPTION } from '../utils/mutations';
@@ -8,6 +8,7 @@ import { ADD_ADOPTION } from '../utils/mutations';
 // import Auth from '../utils/auth';
 
 const Place = () => {
+
   const [formState, setFormState] = useState({
     name: '',
     description: '',
@@ -34,7 +35,6 @@ const Place = () => {
       });
 
       // Auth.getToken(data.addAdoption.token);
-      
     } catch (e) {
       console.error(e);
     }
@@ -61,13 +61,20 @@ const Place = () => {
                   <Form.Label>description</Form.Label>
                   <Form.Control type="text" name="description" placeholder="description" value={formState.description} onChange={handleChange}/>
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                  <Form.Label>pokemon</Form.Label>
-                  <Form.Control type="text" name="pokemon" placeholder="pokemon" value={formState.pokemon} onChange={handleChange}/>
+
+                <Form.Group className="mb-3" controlId="formDropDown">
+                  <Form.Label>poke select</Form.Label>
+                  <Form.Control as="select" name="pokemon" value={formState.pokemon} onChange={handleChange}>
+                    <option value="">select pokemon . . .</option> 
+                    <option value="6136c48286d3859d5d273fc9">Lickitung</option> 
+                    <option value="6136c48286d3859d5d273fca">Koffing</option>
+
+                  </Form.Control>
                 </Form.Group>
 
                 <Button variant="primary" type="submit">Submit</Button>
               </Form>
+ 
             )}
 
             {error && (

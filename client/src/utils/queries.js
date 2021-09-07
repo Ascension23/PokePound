@@ -59,3 +59,12 @@ export const QUERY_ADOPTIONS = gql`
     }
   }
 `;
+
+export const QUERY_POKEMONS = gql`
+  query pokemons {
+    pokemons {
+      _id
+      name
+    }
+  }
+`;

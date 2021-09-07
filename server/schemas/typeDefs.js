@@ -47,7 +47,7 @@ const typeDefs = gql`
     adoption(adoptionId: ID!): Adoption
 
     pokemons: [Pokemon]
-    pokemon(id: ID!): Pokemon
+    pokemon(pokemonId: ID!): Pokemon
 
     me: User
   }

@@ -26,13 +26,17 @@ const resolvers = {
     adoption: async (parent, { adoptionId }) => {
       return Adoption.findOne({ _id: adoptionId }).populate('pokemon');
     },
-    pokemons: async (parent, { username }) => {
-      const params = username ? { username } : {};
-      return await Pokemon.find(params).sort({ createdAt: -1 });
+    // pokemons: async (parent, { username }) => {
+    //   const params = username ? { username } : {};
+    //   return await Pokemon.find(params).sort({ createdAt: -1 });
+    // },
+    pokemons: async () => {
+      // const params = username ? { username } : {};
+      return Pokemon.find({}).sort({ createdAt: -1 });
     },
     pokemon: async (parent, { pokemonId }) => {
       // return await Pokemon.findOne({ _id: pokemonId }).populate('adoption');
-      return await Pokemon.findOne({ _id: pokemonId });
+      return Pokemon.findOne({ _id: pokemonId });
     },
     me: async (parent, args, context) => {
       if (context.user) {

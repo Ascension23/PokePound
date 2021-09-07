@@ -17,6 +17,8 @@ import Profile from './pages/Profile';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+import Testpokemon from './pages/Testpokemon';
+
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -54,6 +56,11 @@ function App() {
             <Route exact path="/Adopt">
               <Adopt />
             </Route>
+
+            <Route exact path="/pokemon">
+              <Testpokemon />
+            </Route>
+
             <Route exact path="/place">
               <Place />
             </Route>
