@@ -8,6 +8,7 @@ const AdoptList = ({ adoptions }) => {
   if (!adoptions.length) {
     return <h3>No adoptions Yet . . .</h3>;
   }
+  console.log(adoptions)
 
   return (
     <div>
@@ -21,6 +22,8 @@ const AdoptList = ({ adoptions }) => {
             <Card.Subtitle className="mb-2 text-muted">added: {adoption.createdAt}</Card.Subtitle>
             <Card.Text>
               {adoption.description}
+              {adoption._id.name}
+
             </Card.Text>
             <Button href={`/adoptions/${adoption._id}`} variant="light">individual adoption (no component yet)</Button>
           </Card.Body>

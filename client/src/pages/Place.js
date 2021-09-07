@@ -11,6 +11,7 @@ const Place = () => {
   const [formState, setFormState] = useState({
     name: '',
     description: '',
+    pokemon: '',
   });
 
   const [addAdoption, { error, data }] = useMutation(ADD_ADOPTION);
@@ -59,6 +60,10 @@ const Place = () => {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Label>description</Form.Label>
                   <Form.Control type="text" name="description" placeholder="description" value={formState.description} onChange={handleChange}/>
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Label>pokemon</Form.Label>
+                  <Form.Control type="text" name="pokemon" placeholder="pokemon" value={formState.pokemon} onChange={handleChange}/>
                 </Form.Group>
 
                 <Button variant="primary" type="submit">Submit</Button>

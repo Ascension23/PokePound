@@ -13,6 +13,7 @@ const typeDefs = gql`
     _id: ID
     name: String
     description: String
+    pokemon: Pokemon
     createdAt: String
   }
 
@@ -55,7 +56,7 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
 
-    addAdoption(name: String!, description: String!): Adoption
+    addAdoption(name: String!, description: String!, pokemon: String!): Adoption
   }
 `;
 

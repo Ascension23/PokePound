@@ -8,6 +8,10 @@ const adoptionSchema = new Schema({
   description: {
     type: String,
   },
+  pokemon: {
+    type: Schema.Types.ObjectId,
+    ref: 'Pokemon'
+  },
   createdAt: {
     type: Date,
     default: Date.now,

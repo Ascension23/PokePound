@@ -25,11 +25,14 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_ADOPTION = gql`
-  mutation addAdoption($name: String!, $description: String!) {
-    addAdoption(name: $name, description: $description) {
+  mutation addAdoption($name: String!, $description: String!, $pokemon: String!) {
+    addAdoption(name: $name, description: $description, pokemon: $pokemon,) {
       _id
       name
       description
+      pokemon {
+        _id
+      }
     }
   }
 `;

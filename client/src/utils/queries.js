@@ -38,6 +38,9 @@ export const QUERY_ADOPTIONS = gql`
       name
       description
       createdAt
+      pokemon {
+        _id
+      }
     }
   }
 `;

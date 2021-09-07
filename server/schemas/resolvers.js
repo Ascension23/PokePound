@@ -21,10 +21,10 @@ const resolvers = {
     //   return Adoption.find(params).sort({ createdAt: -1 });
     // },
     adoptions: async () => {
-      return Adoption.find({}).sort({ createdAt: -1 });
+      return Adoption.find({}).sort({ createdAt: -1 }).populate('pokemon');
     },
     adoption: async (parent, { adoptionId }) => {
-      return Adoption.findOne({ _id: adoptionId });
+      return Adoption.findOne({ _id: adoptionId }).populate('pokemon');
     },
     pokemons: async (parent, { username }) => {
       const params = username ? { username } : {};
@@ -66,11 +66,12 @@ const resolvers = {
       return { token, user };
     },
     // adding adoption
-    addAdoption: async (parent, { name, description }, context) => {
+    addAdoption: async (parent, { name, description, pokemon }, context) => {
       if (context.user) {
         const adoption = await Adoption.create({
           name,
           description,
+          pokemon,
         });
         await User.findOneAndUpdate(
           { _id: context.user._id },
