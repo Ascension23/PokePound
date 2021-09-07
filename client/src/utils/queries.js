@@ -10,6 +10,12 @@ export const QUERY_USER = gql`
         _id
         name
         createdAt
+        pokemon {
+          _id
+          name
+          description
+          gif
+        }
       }
     }
   }
@@ -26,6 +32,12 @@ export const QUERY_ME = gql`
         name
         description
         createdAt
+        pokemon {
+          _id
+          name
+          description
+          gif
+        }
       }
     }
   }
@@ -40,6 +52,9 @@ export const QUERY_ADOPTIONS = gql`
       createdAt
       pokemon {
         _id
+        name
+        description
+        gif
       }
     }
   }

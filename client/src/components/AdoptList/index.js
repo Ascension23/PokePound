@@ -16,14 +16,12 @@ const AdoptList = ({ adoptions }) => {
         adoptions.map((adoption) => (
 
           <Card className={classes.body}>
-          <Card.Img variant="top" src="holder.js/100px180" />
+          <Card.Img variant="top" src={adoption.pokemon.gif} />
           <Card.Body>
-            <Card.Title>{adoption.name}</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">added: {adoption.createdAt}</Card.Subtitle>
+            <Card.Title>name: {adoption.name}</Card.Title>
             <Card.Text>
-              {adoption.description}
-              {adoption._id.name}
-
+              description: {adoption.description}
             </Card.Text>
             <Button href={`/adoptions/${adoption._id}`} variant="light">individual adoption (no component yet)</Button>
           </Card.Body>
