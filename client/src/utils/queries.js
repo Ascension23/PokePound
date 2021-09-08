@@ -6,38 +6,16 @@ export const QUERY_USER = gql`
       _id
       username
       email
-      thoughts {
+      adoptions {
         _id
-        thoughtText
+        name
         createdAt
-      }
-    }
-  }
-`;
-
-export const QUERY_THOUGHTS = gql`
-  query getThoughts {
-    thoughts {
-      _id
-      thoughtText
-      thoughtAuthor
-      createdAt
-    }
-  }
-`;
-
-export const QUERY_SINGLE_THOUGHT = gql`
-  query getSingleThought($thoughtId: ID!) {
-    thought(thoughtId: $thoughtId) {
-      _id
-      thoughtText
-      thoughtAuthor
-      createdAt
-      comments {
-        _id
-        commentText
-        commentAuthor
-        createdAt
+        pokemon {
+          _id
+          name
+          description
+          gif
+        }
       }
     }
   }
@@ -49,12 +27,44 @@ export const QUERY_ME = gql`
       _id
       username
       email
-      thoughts {
+      adoptions {
         _id
-        thoughtText
-        thoughtAuthor
+        name
+        description
         createdAt
+        pokemon {
+          _id
+          name
+          description
+          gif
+        }
       }
+    }
+  }
+`;
+
+export const QUERY_ADOPTIONS = gql`
+  query adoptions {
+    adoptions {
+      _id
+      name
+      description
+      createdAt
+      pokemon {
+        _id
+        name
+        description
+        gif
+      }
+    }
+  }
+`;
+
+export const QUERY_POKEMONS = gql`
+  query pokemons {
+    pokemons {
+      _id
+      name
     }
   }
 `;

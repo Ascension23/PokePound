@@ -1,9 +1,7 @@
 import React from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-
-import ThoughtForm from '../components/ThoughtForm';
-import ThoughtList from '../components/ThoughtList';
+import AdoptList from '../components/AdoptList';
 
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 
@@ -26,15 +24,6 @@ const Profile = () => {
     return <div>Loading...</div>;
   }
 
-  if (!user?.username) {
-    return (
-      <h4>
-        You need to be logged in to see this. Use the navigation links above to
-        sign up or log in!
-      </h4>
-    );
-  }
-
   return (
     <div>
       <div className="flex-row justify-center mb-3">
@@ -43,21 +32,22 @@ const Profile = () => {
         </h2>
 
         <div className="col-12 col-md-10 mb-5">
-          <ThoughtList
-            thoughts={user.thoughts}
-            title={`${user.username}'s thoughts...`}
+          <h1>your listed adoptions</h1>
+          <AdoptList
+            adoptions={user.adoptions}
+            title={`${user.username}'s adoptions...`}
             showTitle={false}
             showUsername={false}
           />
+
         </div>
-        {!userParam && (
+        {/* {!userParam && (
           <div
             className="col-12 col-md-10 mb-3 p-3"
             style={{ border: '1px dotted #1a1a1a' }}
           >
-            <ThoughtForm />
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );

@@ -5,15 +5,6 @@ const adoptionSchema = new Schema({
   name: {
     type: String,
   },
-  level: {
-    type: Number,
-  },
-  attack: {
-    type: Number,
-  },
-  defense: {
-    type: Number,
-  },
   description: {
     type: String,
   },
@@ -21,10 +12,6 @@ const adoptionSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Pokemon'
   },
-  // user: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: 'User'
-  // },
   createdAt: {
     type: Date,
     default: Date.now,

@@ -12,12 +12,9 @@ const typeDefs = gql`
   type Adoption {
     _id: ID
     name: String
-    level: Int
-    attack: Int
-    defense: Int
     description: String
-    createdAt: String
     pokemon: Pokemon
+    createdAt: String
   }
 
   type Pokemon {
@@ -35,22 +32,6 @@ const typeDefs = gql`
     png: String
     description: String
     createdAt: String
-    adoptions: [Adoption]
-  }
-
-  type Thought {
-    _id: ID
-    thoughtText: String
-    thoughtAuthor: String
-    createdAt: String
-    comments: [Comment]!
-  }
-
-  type Comment {
-    _id: ID
-    commentText: String
-    commentAuthor: String
-    createdAt: String
   }
 
   type Auth {
@@ -63,28 +44,19 @@ const typeDefs = gql`
     user(username: String!): User
 
     adoptions: [Adoption]
-    adoption(id: ID!): Adoption
+    adoption(adoptionId: ID!): Adoption
 
     pokemons: [Pokemon]
-    pokemon(id: ID!): Pokemon
+    pokemon(pokemonId: ID!): Pokemon
 
     me: User
-
-
-    thoughts(username: String): [Thought]
-    thought(thoughtId: ID!): Thought
   }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addThought(thoughtText: String!): Thought
 
-    addAdoption(name: String!, level: Int!, attack: Int!, defense: Int!, description: String!, pokemon: String!): Adoption
-
-    addComment(thoughtId: ID!, commentText: String!): Thought
-    removeThought(thoughtId: ID!): Thought
-    removeComment(thoughtId: ID!, commentId: ID!): Thought
+    addAdoption(name: String!, description: String!, pokemon: String!): Adoption
   }
 `;
 
