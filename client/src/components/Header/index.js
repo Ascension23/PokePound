@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, Button, Container } from 'react-bootstrap';
+import { Navbar, Nav, Button, Container, ButtonGroup } from 'react-bootstrap';
 import Auth from '../../utils/auth';
 
 const Header = () => {
@@ -12,22 +12,30 @@ const Header = () => {
     
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="/">poke pound</Navbar.Brand>
+        <Navbar.Brand href="/">Poke Pound</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/adopt">Adopt</Nav.Link>
-            <Nav.Link href="/place">Place Pokemon up for Adoption</Nav.Link>
+            <Nav.Link href="/place">Rehome</Nav.Link>
           {Auth.loggedIn() ? (
             <>
+            <Nav className="justify-content-end">
+            <ButtonGroup>
               <Nav.Link href="/me">{Auth.getProfile().data.username}'s profile</Nav.Link>
-              <Nav.Link onClick={logout}>Log Out</Nav.Link>
+              <Button variant="secondary" onClick={logout}>Log Out</Button>
+            </ButtonGroup>
+            </Nav>
             </>
           ) : (
             <>
-              <Nav.Link href="/signup">Sign Up</Nav.Link>
-              <Nav.Link href="login">Log In</Nav.Link>
+            <Nav className="justify-content-end">
+            <ButtonGroup>
+              <Button variant="secondary" as={Link} to="/signup">Signup</Button>
+              <Button variant="secondary" as={Link} to="/login">Login</Button>
+            </ButtonGroup>
+            </Nav>  
             </>
           )}
           </Nav>
