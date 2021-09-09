@@ -50,7 +50,7 @@ const SingleAdoption = () => {
         <CommentList comments={adoption.comments} />
       </div>
       <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
-        <CommentForm thoughtId={adoption._id} />
+        <CommentForm adoptionId={adoption._id} />
       </div>
     </div>
   );
