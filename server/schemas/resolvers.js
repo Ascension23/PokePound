@@ -86,7 +86,6 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-
     addComment: async (parent, { adoptionId, commentText }, context) => {
       if (context.user) {
         return Adoption.findOneAndUpdate(

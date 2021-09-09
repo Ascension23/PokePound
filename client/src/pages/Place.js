@@ -4,7 +4,6 @@ import { Button, Form, Select } from 'react-bootstrap';
 
 import { useMutation } from '@apollo/client';
 import { ADD_ADOPTION } from '../utils/mutations';
-
 // import Auth from '../utils/auth';
 
 const Place = () => {
@@ -33,7 +32,6 @@ const Place = () => {
       const { data } = await addAdoption({
         variables: { ...formState },
       });
-
       // Auth.getToken(data.addAdoption.token);
     } catch (e) {
       console.error(e);
@@ -61,7 +59,6 @@ const Place = () => {
                   <Form.Label>description</Form.Label>
                   <Form.Control type="text" name="description" placeholder="description" value={formState.description} onChange={handleChange}/>
                 </Form.Group>
-
                 <Form.Group className="mb-3" controlId="formDropDown">
                   <Form.Label>poke select</Form.Label>
                   <Form.Control as="select" name="pokemon" value={formState.pokemon} onChange={handleChange}>
@@ -74,9 +71,7 @@ const Place = () => {
 
                 <Button variant="primary" type="submit">Submit</Button>
               </Form>
- 
             )}
-
             {error && (
               <div className="my-3 p-3 bg-danger text-white">
                 {error.message}

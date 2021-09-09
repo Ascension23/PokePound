@@ -63,7 +63,7 @@ export const QUERY_ADOPTIONS = gql`
 export const QUERY_SINGLE_ADOPTION = gql`
   query getSingleAdoption($adoptionId: ID!) {
     adoption(adoptionId: $adoptionId) {
-      id
+      _id
       name
       description
       createdAt
@@ -72,6 +72,12 @@ export const QUERY_SINGLE_ADOPTION = gql`
         name
         description
         gif
+      }
+      comments {
+        _id
+        commentText
+        commentAuthor
+        createdAt
       }
     }
   }
