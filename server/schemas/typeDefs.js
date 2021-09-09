@@ -16,9 +16,15 @@ const typeDefs = gql`
     pokemon: Pokemon
     createdAt: String
     comments: [Comment]!
-
   }
 
+  type Comment {
+    _id: ID
+    commentText: String
+    commentAuthor: String
+    createdAt: String
+  }
+  
   type Pokemon {
     _id: ID
     id: Int
