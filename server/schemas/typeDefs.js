@@ -15,6 +15,8 @@ const typeDefs = gql`
     description: String
     pokemon: Pokemon
     createdAt: String
+    comments: [Comment]!
+
   }
 
   type Pokemon {
@@ -57,6 +59,9 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
 
     addAdoption(name: String!, description: String!, pokemon: String!): Adoption
+
+    addComment(adoptionId: ID!, commentText: String!): Adoption
+
   }
 `;
 

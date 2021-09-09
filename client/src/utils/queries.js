@@ -60,6 +60,23 @@ export const QUERY_ADOPTIONS = gql`
   }
 `;
 
+export const QUERY_SINGLE_ADOPTION = gql`
+  query getSingleAdoption($adoptionId: ID!) {
+    adoption(adoptionId: $adoptionId) {
+      id
+      name
+      description
+      createdAt
+      pokemon {
+        _id
+        name
+        description
+        gif
+      }
+    }
+  }
+`;
+
 export const QUERY_POKEMONS = gql`
   query pokemons {
     pokemons {
