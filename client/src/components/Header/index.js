@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, Button, Container } from 'react-bootstrap';
+import { Navbar, Button, Container, Nav, ButtonGroup } from 'react-bootstrap';
 import Auth from '../../utils/auth';
 
 const Header = () => {
@@ -9,32 +9,42 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    
     <Navbar bg="light" expand="lg">
-      <Container>
-        <Navbar.Brand href="/">poke pound</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/adopt">Adopt</Nav.Link>
-            <Nav.Link href="/place">Place Pokemon up for Adoption</Nav.Link>
-          {Auth.loggedIn() ? (
-            <>
-              <Nav.Link href="/me">{Auth.getProfile().data.username}'s profile</Nav.Link>
-              <Nav.Link onClick={logout}>Log Out</Nav.Link>
-            </>
-          ) : (
-            <>
-              <Nav.Link href="/signup">Sign Up</Nav.Link>
-              <Nav.Link href="login">Log In</Nav.Link>
-            </>
-          )}
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <Container>
+      <Navbar.Brand href="/" className="mx-3">Poke Pound</Navbar.Brand>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="me-auto">
+          <Nav.Link href="/">Home</Nav.Link>
+          <Nav.Link href="/adopt">Adopt</Nav.Link>
+          <Nav.Link href="/place">Rehome</Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    
 
+{/* login/signup buttons */}
+
+        {Auth.loggedIn() ? (
+          <>
+          <Nav className="justify-content-end">
+          <ButtonGroup className="justify-content-end">
+            <Button href="/me">{Auth.getProfile().data.username}'s profile</Button>
+            <Button variant="secondary" onClick={logout}>Log Out</Button>
+          </ButtonGroup>
+          </Nav>
+          </>
+        ) : (
+          <>
+          <Nav className="justify-content-end">
+          <ButtonGroup className="justify-content-end">
+            <Button variant="secondary" as={Link} to="/signup">Signup</Button>
+            <Button variant="secondary" as={Link} to="/login">Login</Button>
+          </ButtonGroup>
+          </Nav>  
+          </>
+        )}
+    </Container>  
+  </Navbar>
   );
 };
 
