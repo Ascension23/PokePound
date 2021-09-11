@@ -9,6 +9,8 @@ import CommentForm from '../components/CommentForm';
 
 import { QUERY_SINGLE_ADOPTION } from '../utils/queries';
 
+import Raiting from '../components/Raiting/Raiting'
+
 const SingleAdoption = () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
   const { adoptionId } = useParams();
@@ -49,6 +51,10 @@ const SingleAdoption = () => {
       <div className="my-5">
         <CommentList comments={adoption.comments} />
       </div>
+      <div>
+        <Raiting/>
+      </div>
+
       <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
         <CommentForm adoptionId={adoption._id} />
       </div>
