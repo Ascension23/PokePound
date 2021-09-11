@@ -42,7 +42,7 @@ const Place = () => {
     <main className="flex-row justify-center mb-4">
       <div className="col-10 col-lg-8">
         <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Place Pokemon up for Adoption</h4>
+          <h4 className="card-header bg-dark text-light p-2">Place Your Pokemon up For Adoption</h4>
           <div className="card-body">
             {data ? (
               <p>
@@ -52,17 +52,17 @@ const Place = () => {
             ) : (
               <Form onSubmit={handleFormSubmit}>
                 <Form.Group className="mb-3" controlId="formName">
-                  <Form.Label>name</Form.Label>
-                  <Form.Control type="text" name="name" placeholder="name . . ." value={formState.name} onChange={handleChange}/>
+                  <Form.Label>Name</Form.Label>
+                  <Form.Control type="text" name="name" placeholder="Name . . ." value={formState.name} onChange={handleChange}/>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                  <Form.Label>description</Form.Label>
-                  <Form.Control type="text" name="description" placeholder="description" value={formState.description} onChange={handleChange}/>
+                  <Form.Label>Description</Form.Label>
+                  <Form.Control type="text" name="description" placeholder="Description . . ." value={formState.description} onChange={handleChange}/>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formDropDown">
-                  <Form.Label>poke select</Form.Label>
+                  <Form.Label>Select the Pokémon</Form.Label>
                   <Form.Control as="select" name="pokemon" value={formState.pokemon} onChange={handleChange} style={{ overflowY: 'auto' }} >
-                    <option value="">select pokemon . . .</option> 
+                    <option value="">Select the Pokémon . . .</option> 
                     <option value="6136c48286d3859d5d273f5e">Bulbasaur</option>
                     <option value="6136c48286d3859d5d273f5f">Ivysaur</option>
                     <option value="6136c48286d3859d5d273f60">Venusaur</option>

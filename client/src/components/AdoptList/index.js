@@ -18,12 +18,12 @@ const AdoptList = ({ adoptions }) => {
           <Card className={classes.body}>
           <Card.Img variant="top" src={adoption.pokemon.gif} />
           <Card.Body>
-            <Card.Subtitle className="mb-2 text-muted">added: {adoption.createdAt}</Card.Subtitle>
-            <Card.Title>name: {adoption.name}</Card.Title>
+            <Card.Subtitle className="mb-2 text-muted">Added: {adoption.createdAt}</Card.Subtitle>
+            <Card.Title>Name: {adoption.name}</Card.Title>
             <Card.Text>
-              description: {adoption.description}
+              Description: {adoption.description}
             </Card.Text>
-            <Button href={`/adoptions/${adoption._id}`} variant="light">individual adoption (no component yet)</Button>
+            <Button href={`/adoptions/${adoption._id}`} variant="light">Discuss this Pokémon</Button>
           </Card.Body>
           </Card>
 
