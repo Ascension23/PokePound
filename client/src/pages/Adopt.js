@@ -18,10 +18,10 @@ const Adopt = () => {
               <div>Loading...</div>
             ) : (
               <>
-              <h1>adoptables . . .</h1>
+              <h1>Pokémon up For Adoption . . .</h1>
                 <AdoptList
                   adoptions={adoptions}
-                  title="adopatables . . ."
+                  title="Pokémon up For Adoption . . ."
                 />
               </>
 

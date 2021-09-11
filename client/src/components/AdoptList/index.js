@@ -6,7 +6,7 @@ import classes from './index.module.css';
 
 const AdoptList = ({ adoptions }) => {
   if (!adoptions.length) {
-    return <h3>No adoptions Yet . . .</h3>;
+    return <h3>No Pokémon Currently up For Adoption . . .</h3>;
   }
   console.log(adoptions)
 

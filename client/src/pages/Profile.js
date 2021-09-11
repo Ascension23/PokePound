@@ -32,7 +32,7 @@ const Profile = () => {
         </h2>
 
         <div className="col-12 col-md-10 mb-5">
-          <h1>Your Pokémon up For Adoption</h1>
+          <h1>Your Current Pokémon up For Adoption</h1>
           <AdoptList
             adoptions={user.adoptions}
             title={`${user.username}'s adoptions...`}
