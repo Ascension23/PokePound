@@ -54,6 +54,7 @@ export const QUERY_ADOPTIONS = gql`
         _id
         name
         description
+        level
         gif
       }
     }

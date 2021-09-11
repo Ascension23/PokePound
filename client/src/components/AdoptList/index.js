@@ -28,13 +28,13 @@ const AdoptList = ({ adoptions }) => {
               <Card.Header>{adoption.name}</Card.Header>
               <Card.Meta>Added: {adoption.createdAt}</Card.Meta>
               <Card.Description>
-              Species:
+              Species: {adoption.pokemon.name}
               </Card.Description>
               <Card.Description>
               Description: {adoption.description}
               </Card.Description>
               <Card.Description>
-              Level: 
+              Level: {adoption.pokemon.level}
               </Card.Description>
             </Card.Content>
             <Card.Content extra>     

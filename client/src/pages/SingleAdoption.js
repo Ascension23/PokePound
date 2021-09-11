@@ -46,7 +46,10 @@ const SingleAdoption = () => {
         >
           {adoption.description}
         </blockquote>
+        <img src={adoption.pokemon.gif} />
+
       </div>
+
 
       <div className="my-5">
         <CommentList comments={adoption.comments} />
