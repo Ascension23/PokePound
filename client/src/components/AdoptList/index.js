@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Card, Button } from 'react-bootstrap';
+// import { Link } from 'react-router-dom';
+// import { Card, Button } from 'react-bootstrap';
+import { Card, Button, Image } from 'semantic-ui-react'
 import classes from './index.module.css';
 
 
@@ -12,22 +13,37 @@ const AdoptList = ({ adoptions }) => {
 
   return (
     <div>
+      <Card.Group itemsPerRow={2}>
       {adoptions &&
         adoptions.map((adoption) => (
-
-          <Card className={classes.body}>
-          <Card.Img variant="top" src={adoption.pokemon.gif} />
-          <Card.Body>
-            <Card.Subtitle className="mb-2 text-muted">Added: {adoption.createdAt}</Card.Subtitle>
-            <Card.Title>Name: {adoption.name}</Card.Title>
-            <Card.Text>
+          <Card>
+            <Card.Content>
+              <Image
+              size='medium'
+              src={adoption.pokemon.gif}
+              wrapped ui={false}
+              fluid
+              centered
+              />
+              <Card.Header>{adoption.name}</Card.Header>
+              <Card.Meta>Added: {adoption.createdAt}</Card.Meta>
+              <Card.Description>
+              Species:
+              </Card.Description>
+              <Card.Description>
               Description: {adoption.description}
-            </Card.Text>
+              </Card.Description>
+              <Card.Description>
+              Level: 
+              </Card.Description>
+            </Card.Content>
+            <Card.Content extra>     
             <Button href={`/adoptions/${adoption._id}`} variant="light">Discuss this Pokémon</Button>
-          </Card.Body>
+            </Card.Content>
           </Card>
-
+          
         ))}
+        </Card.Group>
     </div>
   );
 };
