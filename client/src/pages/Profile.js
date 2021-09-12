@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-import AdoptList from '../components/AdoptList';
+import ProfileList from '../components/ProfileList';
 
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 
@@ -15,6 +15,7 @@ const Profile = () => {
   });
 
   const user = data?.me || data?.user || {};
+  console.log(user)
   // redirect to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
     return <Redirect to="/me" />;
@@ -33,7 +34,7 @@ const Profile = () => {
 
         <div className="col-12 col-md-10 mb-5">
           <h1>Your Current Pokémon up For Adoption</h1>
-          <AdoptList
+          <ProfileList
             adoptions={user.adoptions}
             title={`${user.username}'s adoptions...`}
             showTitle={false}
@@ -41,13 +42,6 @@ const Profile = () => {
           />
 
         </div>
-        {/* {!userParam && (
-          <div
-            className="col-12 col-md-10 mb-3 p-3"
-            style={{ border: '1px dotted #1a1a1a' }}
-          >
-          </div>
-        )} */}
       </div>
     </div>
   );

@@ -40,7 +40,10 @@ const resolvers = {
     },
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate('adoptions');
+        return User.findOne({ _id: context.user._id }).populate({
+          path: 'adoptions',
+          populate: 'pokemon'
+        });
       }
       throw new AuthenticationError('You need to be logged in!');
     },

@@ -37,6 +37,7 @@ export const QUERY_ME = gql`
           name
           description
           gif
+          level
         }
       }
     }
