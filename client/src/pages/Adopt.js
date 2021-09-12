@@ -5,6 +5,7 @@ import AdoptList from '../components/AdoptList';
 import { QUERY_ADOPTIONS } from '../utils/queries';
 
 const Adopt = () => {
+  
   const { loading, data } = useQuery(QUERY_ADOPTIONS);
   const adoptions = data?.adoptions || [];
 
