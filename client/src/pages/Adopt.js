@@ -11,7 +11,7 @@ const Adopt = () => {
 
   return (
     <main>
-      <div className="flex-row justify-center">
+      <div className="flex-row justify-center" style={{ paddingTop: '5rem' }}>
         {/* <div className="col-12 col-md-10 mb-3 p-3" style={{ border: '1px dotted #1a1a1a' }}></div> */}
           <div className="col-12 col-md-8 mb-3">
             {loading ? (
@@ -19,7 +19,7 @@ const Adopt = () => {
               <div>Loading...</div>
             ) : (
               <>
-              <h1>Pokémon up For Adoption . . .</h1>
+              <h1 style={{ display: 'flex', justifyContent: 'center', paddingBottom: '2rem', }}>Pokémon up For Discussion</h1>
                 <AdoptList
                   adoptions={adoptions}
                   title="Pokémon up For Adoption . . ."

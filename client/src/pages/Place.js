@@ -17,14 +17,14 @@ const Place = () => {
 
   return (
     <main>
-    <div className="flex-row justify-center">
+    <div className="flex-row justify-center" style={{ paddingTop: '5rem', }}>
       <div className="col-12 col-md-8 mb-3">
       {loading ? (
 
         <div>Loading...</div>
       ) : (
         <>
-        <h1>Pokémon up For Adoption . . .</h1>
+        <h1 style={{ display: 'flex', justifyContent: 'center', paddingBottom: '2rem', }}>List Your Pokemon for Discussion</h1>
 
           <PlaceForm
             pokemons={pokemons}
