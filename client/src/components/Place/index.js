@@ -41,8 +41,8 @@ const PlaceForm = ({ pokemons }) => {
 
   return (
     <main className="flex-row justify-center mb-4">
-      <div className="col-10 col-lg-8">
-        <div className="card">
+      <div className="col-10 col-lg-8" >
+        <div className="card" >
           <h4 className="card-header bg-dark text-light p-2">Place Your Pokémon up For Adoption</h4>
           <div className="card-body">
             {data ? (
@@ -56,9 +56,9 @@ const PlaceForm = ({ pokemons }) => {
                   <Form.Label>Name</Form.Label>
                   <Form.Control type="text" name="name" placeholder="Name . . ." value={formState.name} onChange={handleChange}/>
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Group className="mb-3" controlId="formBasicPassword" >
                   <Form.Label>Description</Form.Label>
-                  <Form.Control type="text" name="description" placeholder="Description . . ." value={formState.description} onChange={handleChange}/>
+                  <Form.Control type="text" name="description" placeholder="Description . . ." value={formState.description} onChange={handleChange} />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formDropDown">
                   <Form.Label>Select the Pokémon</Form.Label>

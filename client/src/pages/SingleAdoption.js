@@ -25,7 +25,7 @@ const SingleAdoption = () => {
     return <div>Loading...</div>;
   }
   return (
-    <div className="my-3" style={{ paddingTop: '5rem' }}>
+    <div style={{ display: 'flex', justifyContent: 'center',flexDirection: 'column', paddingTop: '5rem', width: '50rem' }}>
       {/* <h3 className="card-header bg-dark text-light p-2 m-0">
         {adoption.name} <br />
         <span style={{ fontSize: '1rem' }}>
@@ -73,8 +73,14 @@ const SingleAdoption = () => {
           </Card>
         </div>
 
+      <h3
+        // className="p-5 display-inline-block"
+        style={{ display: 'flex', justifyContent: 'center', borderBottom: '1px dotted #1a1a1a', }} 
+      >
+        Comments
+      </h3>
 
-      <div className="my-5">
+      <div className="my-5" style={{ display: 'flex', justifyContent: 'center', }} >
         <CommentList comments={adoption.comments} />
       </div>
       <div>

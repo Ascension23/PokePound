@@ -17,7 +17,7 @@ const Place = () => {
 
   return (
     <main>
-    <div className="flex-row justify-center" style={{ paddingTop: '5rem', }}>
+    <div className="flex-row justify-center" style={{ paddingTop: '5rem', width: '100rem'}}>
       <div className="col-12 col-md-8 mb-3">
       {loading ? (
 
