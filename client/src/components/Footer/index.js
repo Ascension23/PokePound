@@ -1,4 +1,6 @@
 import React from 'react';
+import Donate  from "../Donate/donate";
+
 
 const Footer = () => {
 
@@ -11,6 +13,8 @@ const Footer = () => {
               target="_blank">Haley</a>.
           </p>
         </h4>
+        <Donate/>
+     
       </div>
     </footer>
   );
