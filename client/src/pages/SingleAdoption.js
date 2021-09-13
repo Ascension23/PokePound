@@ -73,25 +73,33 @@ const SingleAdoption = () => {
           </Card>
         </div>
 
-      <h3
+      <h2
         // className="p-5 display-inline-block"
-        style={{ display: 'flex', justifyContent: 'center', borderBottom: '1px dotted #1a1a1a', }} 
+        style={{ display: 'flex', justifyContent: 'center', borderBottom: '1px dotted #1a1a1a', marginTop: '5rem', paddingBottom: '1rem'}} 
       >
         Comments
-      </h3>
+      </h2>
+      {/* what are you thoughts? div */}
+      <div className="m-3 p-4" style={{ borderRadius: '.5rem', border: '1px dotted #1a1a1a' }}>
+        <CommentForm adoptionId={adoption._id} />
+      </div>
 
-      <div className="my-5" style={{ display: 'flex', justifyContent: 'center', }} >
+      {/* listed comments div */}
+      <div >
         <CommentList comments={adoption.comments} />
       </div>
       <div>
         <Raiting/>
       </div>
 
-      <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
+      {/* <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
         <CommentForm adoptionId={adoption._id} />
-      </div>
+      </div> */}
     </div>
   );
 };
 
 export default SingleAdoption;
+
+
+// TO DO: style the "what are you thoughts bit"
