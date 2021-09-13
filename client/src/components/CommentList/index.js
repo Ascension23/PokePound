@@ -34,9 +34,9 @@ const CommentList = ({ comments = [] }) => {
             <div class="content" >
               <Header >
               
-              {comment.commentAuthor} commented{' '}
+              {comment.commentAuthor} {' '}
                 <span style={{ fontSize: '0.825rem' }}>
-                  on {comment.createdAt}
+                  commented on {comment.createdAt}
                 </span>
               </Header>
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Card, Button, Image, Header, Form } from 'semantic-ui-react'
 
 import { useMutation } from '@apollo/client';
 import { ADD_COMMENT } from '../../utils/mutations';
@@ -69,7 +70,7 @@ const CommentForm = ({ adoptionId }) => {
 
   return (
     <div>
-      <h4>What are your thoughts on this pokemon?</h4>
+      <h3>What are your thoughts on this pokemon?</h3>
 
       {Auth.loggedIn() ? (
         <>
@@ -81,7 +82,7 @@ const CommentForm = ({ adoptionId }) => {
             Character Count: {characterCount}/280
             {error && <span className="ml-2">{error.message}</span>}
           </p> */}
-          <form
+          {/* <Form
             className="flex-row justify-center justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
           >
@@ -101,7 +102,18 @@ const CommentForm = ({ adoptionId }) => {
                 Add Comment
               </button>
             </div>
-          </form>
+          </Form> */}
+        <Form onSubmit={handleFormSubmit} reply>
+          <Form.TextArea
+            name="commentText"
+            placeholder="Add your comment..."
+            value={formState.commentText}
+
+            onChange={handleChange} />
+          <Button type="submit" content='Add Reply' labelPosition='left' icon='edit' basic />
+        </Form>
+
+
         </>
       ) : (
         <p>

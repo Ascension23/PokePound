@@ -79,14 +79,15 @@ const SingleAdoption = () => {
       >
         Comments
       </h2>
-      {/* what are you thoughts? div */}
-      <div className="m-3 p-4" style={{ borderRadius: '.5rem', border: '1px dotted #1a1a1a' }}>
-        <CommentForm adoptionId={adoption._id} />
-      </div>
 
       {/* listed comments div */}
       <div >
         <CommentList comments={adoption.comments} />
+      </div>
+      
+      {/* what are you thoughts? div */}
+      <div className="m-3 p-4" style={{ borderRadius: '.5rem', border: '1px dotted #1a1a1a' }}>
+        <CommentForm adoptionId={adoption._id} />
       </div>
       <div>
         <Raiting/>
