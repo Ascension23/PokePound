@@ -74,6 +74,7 @@ export const QUERY_SINGLE_ADOPTION = gql`
         name
         description
         gif
+        level
       }
       comments {
         _id

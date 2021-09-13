@@ -1,14 +1,12 @@
 import React from 'react';
-
 // Import the `useParams()` hook
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-
 import CommentList from '../components/CommentList';
 import CommentForm from '../components/CommentForm';
 
 import { QUERY_SINGLE_ADOPTION } from '../utils/queries';
-
+import { Card, Button, Image } from 'semantic-ui-react'
 import Raiting from '../components/Raiting/Raiting'
 
 const SingleAdoption = () => {
@@ -27,8 +25,8 @@ const SingleAdoption = () => {
     return <div>Loading...</div>;
   }
   return (
-    <div className="my-3">
-      <h3 className="card-header bg-dark text-light p-2 m-0">
+    <div className="my-3" style={{ paddingTop: '5rem' }}>
+      {/* <h3 className="card-header bg-dark text-light p-2 m-0">
         {adoption.name} <br />
         <span style={{ fontSize: '1rem' }}>
           had this thought on {adoption.createdAt}
@@ -47,8 +45,33 @@ const SingleAdoption = () => {
           {adoption.description}
         </blockquote>
         <img src={adoption.pokemon.gif} />
-
-      </div>
+      </div> */}
+      <h1 style={{ display: 'flex', justifyContent: 'center', paddingBottom: '3rem', }}>Discussing {adoption.name} . . .</h1>
+        <div style={{ display: 'flex', justifyContent: 'center', }}>
+          <Card style={{ width: '35rem', height: '20rem'}}>
+            <Card.Content style={{ paddingTop: '5rem',}}>
+              <Image
+              size='medium'
+              src={adoption.pokemon.gif}
+              wrapped ui={false}
+              fluid
+              centered
+              style={{ display: 'flex', justifyContent: 'center', }}
+              />
+              <Card.Header style={{ display: 'flex', justifyContent: 'center', }}>{adoption.name}</Card.Header>
+              <Card.Meta style={{ display: 'flex', justifyContent: 'center', }}>Added: {adoption.createdAt}</Card.Meta>
+              <Card.Description style={{ display: 'flex', justifyContent: 'center', }}>
+              Species: {adoption.pokemon.name}
+              </Card.Description>
+              <Card.Description style={{ display: 'flex', justifyContent: 'center', }}>
+              Description: {adoption.description}
+              </Card.Description>
+              <Card.Description style={{ display: 'flex', justifyContent: 'center', }}>
+              Level: {adoption.pokemon.level}
+              </Card.Description>
+            </Card.Content>
+          </Card>
+        </div>
 
 
       <div className="my-5">
