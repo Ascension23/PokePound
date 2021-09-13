@@ -39,6 +39,8 @@ const CommentForm = ({ adoptionId }) => {
     } catch (e) {
       console.error(e);
     }
+
+    setFormState({ adoptionId: adoptionId, commentText: ''});
   };//endtest
 
   // const handleFormSubmit = async (event) => {
