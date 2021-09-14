@@ -6,7 +6,7 @@ import CommentList from '../components/CommentList';
 import CommentForm from '../components/CommentForm';
 
 import { QUERY_SINGLE_ADOPTION } from '../utils/queries';
-import { Card, Button, Image } from 'semantic-ui-react'
+import { Card, Button, Image, Header } from 'semantic-ui-react'
 import Raiting from '../components/Raiting/Raiting'
 
 const SingleAdoption = () => {
@@ -48,15 +48,15 @@ const SingleAdoption = () => {
       </div> */}
       <h1 style={{ display: 'flex', justifyContent: 'center', paddingBottom: '3rem', }}>Discussing {adoption.name} . . .</h1>
         <div style={{ display: 'flex', justifyContent: 'center', }}>
-          <Card style={{ width: '35rem', height: '20rem'}}>
-            <Card.Content style={{ paddingTop: '5rem',}}>
+          <Card style={{ width: '35rem', height: '25rem'}}>
+            <Card.Content style={{ paddingTop: '2rem',}}>
               <Image
               size='medium'
               src={adoption.pokemon.gif}
               wrapped ui={false}
               fluid
               centered
-              style={{ display: 'flex', justifyContent: 'center', }}
+              style={{ display: 'flex', justifyContent: 'center', height: '13rem', paddingTop: '1rem', paddingBottom: '1.5rem'}}
               />
               <Card.Header style={{ display: 'flex', justifyContent: 'center', }}>{adoption.name}</Card.Header>
               <Card.Meta style={{ display: 'flex', justifyContent: 'center', }}>Added: {adoption.createdAt}</Card.Meta>
@@ -79,6 +79,18 @@ const SingleAdoption = () => {
       >
         Comments
       </h2>
+      {/* POLICY CARD */}
+      <Card style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem', width: '50rem'}}>
+        <div class="content" >
+          <Header>
+          <p>Poké Talk Comment Policy</p>
+          </Header>
+          <p className="card-body">We respect discourse and you don't have to agree with the points made, but please be constructive.</p>
+        </div>
+      </Card>
+
+
+
 
       {/* listed comments div */}
       <div >
