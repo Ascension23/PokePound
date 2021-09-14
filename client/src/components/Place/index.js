@@ -41,7 +41,7 @@ const PlaceForm = ({ pokemons }) => {
 
   return (
     <main className="flex-row justify-center mb-4">
-      <div className="col-10 col-lg-8" >
+      <div className="col-10 col-lg-8"  >
         <div className="card" >
           <h4 className="card-header bg-dark text-light p-2">Describe Your Pokémon</h4>
           <div className="card-body">

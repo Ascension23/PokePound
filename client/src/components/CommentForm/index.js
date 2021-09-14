@@ -50,7 +50,6 @@ const CommentForm = ({ adoptionId }) => {
             name="commentText"
             placeholder="Add your comment..."
             value={formState.commentText}
-
             onChange={handleChange} />
           <Button type="submit" content='Add Reply' labelPosition='left' icon='edit' basic />
         </Form>

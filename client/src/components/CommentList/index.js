@@ -5,7 +5,7 @@ import { Card, Button, Image, Header, } from 'semantic-ui-react'
 
 const CommentList = ({ comments = [] }) => {
   if (!comments.length) {
-    return <h3>No Comments Yet</h3>;
+    return <div className="flex-row my-4" style={{ paddingTop: '3rem' }}> <h3>No Comments Yet . . .</h3> </div>;
   }
 
   return (
