@@ -54,8 +54,8 @@ export const ADD_COMMENT = gql`
 `;
 
 export const REMOVE_ADOPTION = gql`
-  mutation removeAdoption($_id: ID!) {
-    removeAdoption(_id: $_id) {
+  mutation removeAdoption($adoptionId: ID!) {
+    removeAdoption(adoptionId: $adoptionId) {
       _id
       name
       description

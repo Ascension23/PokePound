@@ -5,12 +5,35 @@ import { Card, Button, Image } from 'semantic-ui-react'
 // import classes from './index.module.css';
 import '../ProfileList/style.css'
 
+import { useMutation } from '@apollo/client';
+import { REMOVE_ADOPTION } from '../../utils/mutations';
 
 const ProfileList = ({ adoptions }) => {
+  const [ removeAdoption ] = useMutation(REMOVE_ADOPTION);
+
   if (!adoptions.length) {
     return <h3>Darn! There doesn't seem to be any Pokémon here!</h3>;
   }
   console.log(adoptions)
+
+
+  //DELETE SHIT
+  const handleDelete = async (event) => {
+    event.preventDefault();
+    const id = event.target.getAttribute('AdoptionId');
+    // console.log(`clicked the delete button ${id}`);
+    try {
+      const { data } = await removeAdoption({
+        variables: {
+          adoptionId: id,
+        }
+      });
+    } catch (e) {
+      console.error(e);
+    }
+
+    window.location.reload(false)
+  };
 
   return (
     <div >
@@ -39,6 +62,10 @@ const ProfileList = ({ adoptions }) => {
             </Card.Content>
             <Card.Content extra style={{ display: 'flex', justifyContent: 'center', }}>     
             <Button href={`/adoptions/${adoption._id}`} variant="light">View discussion</Button>
+
+            {/* delete button  */}
+            <Button onClick={handleDelete} AdoptionId={adoption._id} variant="light">Delete discussion</Button>
+
             </Card.Content>
           </Card>
           
