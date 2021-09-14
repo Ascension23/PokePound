@@ -14,7 +14,7 @@ const AdoptList = ({ adoptions }) => {
 
   return (
     <div>
-      <Card.Group itemsPerRow={2}>
+      <Card.Group itemsPerRow={2} style={{ display: 'flex', justifyContent: 'center' }}>
       {adoptions &&
         adoptions.map((adoption) => (
           <Card className="pokeCard__main ">

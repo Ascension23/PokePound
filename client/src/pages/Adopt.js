@@ -19,7 +19,7 @@ const Adopt = () => {
               <div>Loading...</div>
             ) : (
               <>
-              <h1 style={{ display: 'flex', justifyContent: 'center', paddingBottom: '2rem', }}>Pokémon up For Discussion</h1>
+              <h1 style={{ display: 'flex', justifyContent: 'center', paddingBottom: '2rem', }} >Pokémon up For Discussion</h1>
                 <AdoptList
                   adoptions={adoptions}
                   title="Pokémon up For Adoption . . ."

@@ -65,9 +65,10 @@ const Profile = () => {
 
               <Card style={{ width: '25rem', height: '30rem'}}>
                 <Card.Content>
-                <Image src={process.env.PUBLIC_URL + '/dittoPlaceholder.png'}  wrapped ui={true} />
-                {/* <h1 style={{ display: 'flex', justifyContent: 'center', }}>image placeholder</h1> */}
-                <Card.Header style={{ display: 'flex', justifyContent: 'center', paddingTop: '1rem', paddingBottom: '.25rem' }} >{user.username}</Card.Header>
+                  <Image src={process.env.PUBLIC_URL + '/dittoPlaceholder.png'}  wrapped ui={true} />
+                  {/* <h1 style={{ display: 'flex', justifyContent: 'center', }}>image placeholder</h1> */}
+                  <Card.Header style={{ display: 'flex', justifyContent: 'center', paddingTop: '1rem', paddingBottom: '.25rem' }} >{user.username}</Card.Header>
+                  {/* <Card.Meta><user.creat</Card.Meta> */}
                   <Card.Description style={{ display: 'flex', justifyContent: 'center' }}>
                   {user.email}
                   </Card.Description>
