@@ -70,6 +70,8 @@ const typeDefs = gql`
 
     removeAdoption(adoptionId: ID!): Adoption
 
+    updateUser(username: String!, email: String!): User
+
   }
 `;
 

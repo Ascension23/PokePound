@@ -72,6 +72,15 @@ const resolvers = {
 
       return { token, user };
     },
+    //update user
+    updateUser: async (parent, { username, email }, context) => {
+      if (context.user) {
+        return User.findByIdAndUpdate(context.user._id, { username, email }, {
+          new: true,
+        });
+      }
+      throw new AuthenticationError('Not logged in');
+    },
     // adding adoption
     addAdoption: async (parent, { name, description, pokemon }, context) => {
       if (context.user) {
@@ -106,7 +115,6 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-
     removeAdoption: async (parent, { adoptionId }, context) => {
       if (context.user) {
         const adoption = await Adoption.findOneAndDelete({

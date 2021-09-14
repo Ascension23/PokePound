@@ -65,3 +65,13 @@ export const REMOVE_ADOPTION = gql`
     }
   }
 `;
+
+export const UPDATE_USER = gql`
+  mutation updateUser($username: String!, $email: String!) {
+    updateUser(username: $username, email: $email) {
+      _id
+      username
+      email
+    }
+  }
+`;
