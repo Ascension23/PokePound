@@ -68,6 +68,8 @@ const typeDefs = gql`
 
     addComment(adoptionId: ID!, commentText: String!): Adoption
 
+    removeAdoption(adoptionId: ID!): Adoption
+
   }
 `;
 

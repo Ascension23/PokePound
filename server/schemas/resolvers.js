@@ -106,6 +106,21 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
+
+    removeAdoption: async (parent, { adoptionId }, context) => {
+      if (context.user) {
+        const adoption = await Adoption.findOneAndDelete({
+          _id: adoptionId,
+        });
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { adoptions: adoption._id } }
+        );
+
+        return adoption;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
     
   },
 };

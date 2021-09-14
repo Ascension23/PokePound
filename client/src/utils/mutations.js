@@ -52,3 +52,16 @@ export const ADD_COMMENT = gql`
     }
   }
 `;
+
+export const REMOVE_ADOPTION = gql`
+  mutation removeAdoption($_id: ID!) {
+    removeAdoption(_id: $_id) {
+      _id
+      name
+      description
+      pokemon {
+        _id
+      }
+    }
+  }
+`;
