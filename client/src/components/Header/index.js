@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Button, Container, Nav, ButtonGroup } from 'react-bootstrap';
 import Auth from '../../utils/auth';
+import Image from 'react-bootstrap/Image'
 
 const Header = () => {
   const logout = (event) => {
@@ -11,7 +12,15 @@ const Header = () => {
   return (
     <Navbar bg="light" expand="lg">
     <Container>
-      <Navbar.Brand href="/" className="mx-3">Poké Talk</Navbar.Brand>
+      <Navbar.Brand href="/" className="mx-3">
+      <Image
+        src="./poketalk.png"
+        width="140"
+        height="70"
+        className=" "
+        alt="Poke Talk logo"
+      />
+        </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
