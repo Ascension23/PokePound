@@ -57,7 +57,7 @@ const SingleAdoption = () => {
         Comments
       </h2>
       {/* POLICY CARD */}
-      <Card style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem', width: '50rem', backgroundColor: 'lightgrey'}}>
+      <Card style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem', marginBottom: '2.5rem', width: '50rem', backgroundColor: 'lightgrey'}}>
         <div class="content" >
           <Header>
           <h3 style={{ display: 'flex', justifyContent: 'center' }}>Poké Talk Comment Policy</h3>

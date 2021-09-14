@@ -17,7 +17,7 @@ const PokeList = ({ pokemons }) => {
           <Card >
           {/* <Card.Img variant="top" src={pokemon.name} /> */}
           <Card.Body>
-            <Card.Subtitle className="mb-2 text-muted">added: {pokemon.createdAt}</Card.Subtitle>
+            <Card.Subtitle className="mb-2 text-muted" >added: {pokemon.createdAt}</Card.Subtitle>
             <Card.Title>name: {pokemon.name}</Card.Title>
             <Card.Text>
               id: {pokemon._id}

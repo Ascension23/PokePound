@@ -22,22 +22,21 @@ const ProfileList = ({ adoptions }) => {
               size='medium'
               src={adoption.pokemon.gif}
               wrapped ui={false}
-              fluid
-              centered
+              style={{ display: 'flex', justifyContent: 'center', height: '7rem', paddingTop: '1rem', paddingBottom: '1.5rem'}}
               />
-              <Card.Header>{adoption.name}</Card.Header>
-              <Card.Meta>Added: {adoption.createdAt}</Card.Meta>
-              <Card.Description>
+              <Card.Header style={{ display: 'flex', justifyContent: 'center', }}>{adoption.name}</Card.Header>
+              <Card.Meta style={{ display: 'flex', justifyContent: 'center', }}>Added: {adoption.createdAt}</Card.Meta>
+              <Card.Description style={{ display: 'flex', justifyContent: 'center', }}>
               Species: {adoption.pokemon.name}
               </Card.Description>
-              <Card.Description>
+              <Card.Description style={{ display: 'flex', justifyContent: 'center', }}>
               Description: {adoption.description}
               </Card.Description>
-              <Card.Description>
+              <Card.Description style={{ display: 'flex', justifyContent: 'center', }}>
               Level: {adoption.pokemon.level}
               </Card.Description>
             </Card.Content>
-            <Card.Content extra>     
+            <Card.Content extra style={{ display: 'flex', justifyContent: 'center', }}>     
             <Button href={`/adoptions/${adoption._id}`} variant="light">View disscusion</Button>
             </Card.Content>
           </Card>
