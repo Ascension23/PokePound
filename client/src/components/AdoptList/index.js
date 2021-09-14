@@ -3,6 +3,7 @@ import React from 'react';
 // import { Card, Button } from 'react-bootstrap';
 import { Card, Button, Image } from 'semantic-ui-react'
 // import classes from './index.module.css';
+import '../AdoptList/style.css'
 
 
 const AdoptList = ({ adoptions }) => {
@@ -16,7 +17,7 @@ const AdoptList = ({ adoptions }) => {
       <Card.Group itemsPerRow={2}>
       {adoptions &&
         adoptions.map((adoption) => (
-          <Card>
+          <Card className="pokeCard__main ">
             <Card.Content>
               <Image
               size='medium'
