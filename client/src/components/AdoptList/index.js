@@ -2,12 +2,12 @@ import React from 'react';
 // import { Link } from 'react-router-dom';
 // import { Card, Button } from 'react-bootstrap';
 import { Card, Button, Image } from 'semantic-ui-react'
-import classes from './index.module.css';
+// import classes from './index.module.css';
 
 
 const AdoptList = ({ adoptions }) => {
   if (!adoptions.length) {
-    return <h3>No Pokémon Currently up For Adoption . . .</h3>;
+    return <h3>Darn! There doesn't seem to be any Pokémon here!</h3>;
   }
   console.log(adoptions)
 

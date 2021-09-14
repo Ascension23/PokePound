@@ -11,13 +11,13 @@ const Header = () => {
   return (
     <Navbar bg="light" expand="lg">
     <Container>
-      <Navbar.Brand href="/" className="mx-3">Poké Pound</Navbar.Brand>
+      <Navbar.Brand href="/" className="mx-3">Poké Talk</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="/adopt">Adoption Listings</Nav.Link>
-          <Nav.Link href="/place">Rehome Your Pokémon</Nav.Link>
+          {/* <Nav.Link href="/">Home</Nav.Link> */}
+          <Nav.Link href="/adopt">Community Discussion</Nav.Link>
+          <Nav.Link href="/place">Add a Pokémon</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     

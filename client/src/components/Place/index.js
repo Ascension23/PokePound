@@ -43,12 +43,12 @@ const PlaceForm = ({ pokemons }) => {
     <main className="flex-row justify-center mb-4">
       <div className="col-10 col-lg-8" >
         <div className="card" >
-          <h4 className="card-header bg-dark text-light p-2">Place Your Pokémon up For Adoption</h4>
+          <h4 className="card-header bg-dark text-light p-2">Describe Your Pokémon</h4>
           <div className="card-body">
             {data ? (
               <p>
-                Success! You may see your adoption{' '}
-                <Link to="/adopt">on the adoption page.</Link>
+                Success! You may see your Pokémon{' '}
+                <Link to="/adopt">on the discussion page.</Link>
               </p>
             ) : (
               <Form onSubmit={handleFormSubmit}>

@@ -1,0 +1,426 @@
+[1mdiff --git a/client/src/components/AdoptList/index.js b/client/src/components/AdoptList/index.js[m
+[1mindex e0072f8..324486c 100644[m
+[1m--- a/client/src/components/AdoptList/index.js[m
+[1m+++ b/client/src/components/AdoptList/index.js[m
+[36m@@ -2,12 +2,12 @@[m [mimport React from 'react';[m
+ // import { Link } from 'react-router-dom';[m
+ // import { Card, Button } from 'react-bootstrap';[m
+ import { Card, Button, Image } from 'semantic-ui-react'[m
+[31m-import classes from './index.module.css';[m
+[32m+[m[32m// import classes from './index.module.css';[m
+ [m
+ [m
+ const AdoptList = ({ adoptions }) => {[m
+   if (!adoptions.length) {[m
+[31m-    return <h3>No Pokémon Currently up For Adoption . . .</h3>;[m
+[32m+[m[32m    return <h3>Darn! There doesn't seem to be any Pokemon here.</h3>;[m
+   }[m
+   console.log(adoptions)[m
+ [m
+[36m@@ -16,7 +16,7 @@[m [mconst AdoptList = ({ adoptions }) => {[m
+       <Card.Group itemsPerRow={2}>[m
+       {adoptions &&[m
+         adoptions.map((adoption) => ([m
+[31m-          <Card>[m
+[32m+[m[32m          <Card class='ui card'>[m
+             <Card.Content>[m
+               <Image[m
+               size='medium'[m
+[1mdiff --git a/client/src/components/AdoptList/index.module.css b/client/src/components/AdoptList/index.module.css[m
+[1mdeleted file mode 100644[m
+[1mindex 72f5fd8..0000000[m
+[1m--- a/client/src/components/AdoptList/index.module.css[m
+[1m+++ /dev/null[m
+[36m@@ -1,7 +0,0 @@[m
+[31m-.body {[m
+[31m-	display: flex;[m
+[31m-	align-items: center;[m
+[31m-[m
+[31m-	width: 25rem;[m
+[31m-	padding: 1rem;[m
+[31m-}[m
+\ No newline at end of file[m
+[1mdiff --git a/client/src/components/Header/index.js b/client/src/components/Header/index.js[m
+[1mindex b424d07..f7e9a6d 100644[m
+[1m--- a/client/src/components/Header/index.js[m
+[1m+++ b/client/src/components/Header/index.js[m
+[36m@@ -16,8 +16,8 @@[m [mconst Header = () => {[m
+       <Navbar.Collapse id="responsive-navbar-nav">[m
+         <Nav className="me-auto">[m
+           <Nav.Link href="/">Home</Nav.Link>[m
+[31m-          <Nav.Link href="/adopt">Adoption Listings</Nav.Link>[m
+[31m-          <Nav.Link href="/place">Rehome Your Pokémon</Nav.Link>[m
+[32m+[m[32m          <Nav.Link href="/adopt">Community</Nav.Link>[m
+[32m+[m[32m          <Nav.Link href="/place">Add Your Pokémon</Nav.Link>[m
+         </Nav>[m
+       </Navbar.Collapse>[m
+     [m
+[1mdiff --git a/client/src/components/Place/index.js b/client/src/components/Place/index.js[m
+[1mindex d9cd5cb..b6a3792 100644[m
+[1m--- a/client/src/components/Place/index.js[m
+[1m+++ b/client/src/components/Place/index.js[m
+[36m@@ -1,6 +1,6 @@[m
+ import React, { useState } from 'react';[m
+ import { Link } from 'react-router-dom';[m
+[31m-import { Button, Form, Select } from 'react-bootstrap';[m
+[32m+[m[32mimport { Button, Form, } from 'react-bootstrap';[m
+ [m
+ [m
+ import { useMutation } from '@apollo/client';[m
+[36m@@ -30,6 +30,7 @@[m [mconst PlaceForm = ({ pokemons }) => {[m
+     console.log(formState);[m
+ [m
+     try {[m
+[32m+[m[32m      // eslint-disable-next-line no-unused-vars[m
+       const { data } = await addAdoption({[m
+         variables: { ...formState },[m
+       });[m
+[36m@@ -40,10 +41,11 @@[m [mconst PlaceForm = ({ pokemons }) => {[m
+   };[m
+ [m
+   return ([m
+[31m-    <main className="flex-row justify-center mb-4">[m
+[31m-      <div className="col-10 col-lg-8">[m
+[32m+[m[32m    <main className="flex-row justify-center mb-2">[m
+[32m+[m[32m      <div class="col-sm-4"></div>[m
+[32m+[m[32m      <div className="col-sm-8">[m
+         <div className="card">[m
+[31m-          <h4 className="card-header bg-dark text-light p-2">Place Your Pokémon up For Adoption</h4>[m
+[32m+[m[32m          <h4 className="card-header bg-dark text-light p-2">Describe your Pokémon below</h4>[m
+           <div className="card-body">[m
+             {data ? ([m
+               <p>[m
+[1mdiff --git a/client/src/pages/Adopt.js b/client/src/pages/Adopt.js[m
+[1mindex 664207b..d8e7244 100644[m
+[1m--- a/client/src/pages/Adopt.js[m
+[1m+++ b/client/src/pages/Adopt.js[m
+[36m@@ -18,10 +18,10 @@[m [mconst Adopt = () => {[m
+               <div>Loading...</div>[m
+             ) : ([m
+               <>[m
+[31m-              <h1>Pokémon up For Adoption . . .</h1>[m
+[32m+[m[32m              <h1>Add a Pokémon to Our Community</h1>[m
+                 <AdoptList[m
+                   adoptions={adoptions}[m
+[31m-                  title="Pokémon up For Adoption . . ."[m
+[32m+[m[32m                  title="Add a Pokémon to Our Community"[m
+                 />[m
+               </>[m
+ [m
+[1mdiff --git a/client/src/pages/Place.js b/client/src/pages/Place.js[m
+[1mindex f72e99d..d76abfd 100644[m
+[1m--- a/client/src/pages/Place.js[m
+[1m+++ b/client/src/pages/Place.js[m
+[36m@@ -24,7 +24,7 @@[m [mconst Place = () => {[m
+       <div>Loading...</div>[m
+     ) : ([m
+       <>[m
+[31m-      <h1>Pokémon up For Adoption . . .</h1>[m
+[32m+[m[32m      <h1>Add a Pokémon to Our Community</h1>[m
+ [m
+         <PlaceForm[m
+           pokemons={pokemons}[m
+[1mdiff --git a/client/src/pages/Profile.js b/client/src/pages/Profile.js[m
+[1mindex 1005d30..54f1bb0 100644[m
+[1m--- a/client/src/pages/Profile.js[m
+[1m+++ b/client/src/pages/Profile.js[m
+[36m@@ -1,7 +1,8 @@[m
+ import React from 'react';[m
+ import { Redirect, useParams } from 'react-router-dom';[m
+ import { useQuery } from '@apollo/client';[m
+[31m-import AdoptList from '../components/AdoptList';[m
+[32m+[m[32mimport ProfileList from '../components/ProfileList';[m
+[32m+[m[32mimport { Card, Button, Image } from 'semantic-ui-react'[m
+ [m
+ import { QUERY_USER, QUERY_ME } from '../utils/queries';[m
+ [m
+[36m@@ -28,19 +29,27 @@[m [mconst Profile = () => {[m
+     <div>[m
+       <div className="flex-row justify-center mb-3">[m
+         <h2 className="col-12 col-md-10 bg-dark text-light p-3 mb-5">[m
+[31m-          Viewing {userParam ? `${user.username}'s` : 'your'} profile.[m
+[32m+[m[32m          {user.username}'s Pokémon[m
+         </h2>[m
+ [m
+[31m-        <div className="col-12 col-md-10 mb-5">[m
+[31m-          <h1>Your Current Pokémon up For Adoption</h1>[m
+[31m-          <AdoptList[m
+[32m+[m[32m        <Card.Group itemsPerRow={2}>[m
+[32m+[m[32m        <Card.Content>[m
+[32m+[m[32m        <Image[m
+[32m+[m[32m              size='medium'[m
+[32m+[m[32m              src={user.pokemon}[m
+[32m+[m[32m              wrapped ui={false}[m
+[32m+[m[32m              fluid[m
+[32m+[m[32m              centered[m
+[32m+[m[32m              />[m
+[32m+[m[32m        <Card.Header>{user.username}</Card.Header>[m
+[32m+[m[32m          <ProfileList[m
+             adoptions={user.adoptions}[m
+             title={`${user.username}'s adoptions...`}[m
+             showTitle={false}[m
+             showUsername={false}[m
+           />[m
+[31m-[m
+[31m-        </div>[m
+[32m+[m[32m        </Card.Content>[m
+[32m+[m[32m        </Card.Group>[m
+         {/* {!userParam && ([m
+           <div[m
+             className="col-12 col-md-10 mb-3 p-3"[m
+[1mdiff --git a/package-lock.json b/package-lock.json[m
+[1mindex 3e71c9f..056aed1 100644[m
+[1m--- a/package-lock.json[m
+[1m+++ b/package-lock.json[m
+[36m@@ -4,6 +4,30 @@[m
+   "lockfileVersion": 1,[m
+   "requires": true,[m
+   "dependencies": {[m
+[32m+[m[32m    "@types/json-schema": {[m
+[32m+[m[32m      "version": "7.0.9",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.9.tgz",[m
+[32m+[m[32m      "integrity": "sha512-qcUXuemtEu+E5wZSJHNxUXeCZhAfXKQ41D+duX+VYPde7xyEVZci+/oXKJL13tnRs9lR2pr4fod59GT6/X1/yQ==",[m
+[32m+[m[32m      "dev": true[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "ajv": {[m
+[32m+[m[32m      "version": "6.12.6",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/ajv/-/ajv-6.12.6.tgz",[m
+[32m+[m[32m      "integrity": "sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==",[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "requires": {[m
+[32m+[m[32m        "fast-deep-equal": "^3.1.1",[m
+[32m+[m[32m        "fast-json-stable-stringify": "^2.0.0",[m
+[32m+[m[32m        "json-schema-traverse": "^0.4.1",[m
+[32m+[m[32m        "uri-js": "^4.2.2"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "ajv-keywords": {[m
+[32m+[m[32m      "version": "3.5.2",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/ajv-keywords/-/ajv-keywords-3.5.2.tgz",[m
+[32m+[m[32m      "integrity": "sha512-5p6WTN0DdTGVQk6VjcEju19IgaHudalcfabD7yhDGeA6bcQnmL+CpveLJq/3hvfwd1aof6L386Ougkx6RfyMIQ==",[m
+[32m+[m[32m      "dev": true[m
+[32m+[m[32m    },[m
+     "ansi-regex": {[m
+       "version": "4.1.0",[m
+       "resolved": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-4.1.0.tgz",[m
+[36m@@ -19,6 +43,12 @@[m
+         "color-convert": "^1.9.0"[m
+       }[m
+     },[m
+[32m+[m[32m    "big.js": {[m
+[32m+[m[32m      "version": "5.2.2",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/big.js/-/big.js-5.2.2.tgz",[m
+[32m+[m[32m      "integrity": "sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ==",[m
+[32m+[m[32m      "dev": true[m
+[32m+[m[32m    },[m
+     "camelcase": {[m
+       "version": "5.3.1",[m
+       "resolved": "https://registry.npmjs.org/camelcase/-/camelcase-5.3.1.tgz",[m
+[36m@@ -90,12 +120,41 @@[m
+         "yargs": "^13.3.0"[m
+       }[m
+     },[m
+[32m+[m[32m    "copy-anything": {[m
+[32m+[m[32m      "version": "2.0.3",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/copy-anything/-/copy-anything-2.0.3.tgz",[m
+[32m+[m[32m      "integrity": "sha512-GK6QUtisv4fNS+XcI7shX0Gx9ORg7QqIznyfho79JTnX1XhLiyZHfftvGiziqzRiEi/Bjhgpi+D2o7HxJFPnDQ==",[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "requires": {[m
+[32m+[m[32m        "is-what": "^3.12.0"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "craco-less": {[m
+[32m+[m[32m      "version": "1.20.0",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/craco-less/-/craco-less-1.20.0.tgz",[m
+[32m+[m[32m      "integrity": "sha512-oP7kMRFOwwCPAlS+RBfA0yt9qAfSH8EOzJOQyzspVOECDtATTLXYyEYd0ghoybbReVRZbOmGxNtPWh4ALpVRng==",[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "requires": {[m
+[32m+[m[32m        "less": "^4.1.1",[m
+[32m+[m[32m        "less-loader": "^7.3.0"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+     "date-fns": {[m
+       "version": "2.23.0",[m
+       "resolved": "https://registry.npmjs.org/date-fns/-/date-fns-2.23.0.tgz",[m
+       "integrity": "sha512-5ycpauovVyAk0kXNZz6ZoB9AYMZB4DObse7P3BPWmyEjXNORTI8EJ6X0uaSAq4sCHzM1uajzrkr6HnsLQpxGXA==",[m
+       "dev": true[m
+     },[m
+[32m+[m[32m    "debug": {[m
+[32m+[m[32m      "version": "3.2.7",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/debug/-/debug-3.2.7.tgz",[m
+[32m+[m[32m      "integrity": "sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==",[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "optional": true,[m
+[32m+[m[32m      "requires": {[m
+[32m+[m[32m        "ms": "^2.1.1"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+     "decamelize": {[m
+       "version": "1.2.0",[m
+       "resolved": "https://registry.npmjs.org/decamelize/-/decamelize-1.2.0.tgz",[m
+[36m@@ -108,6 +167,22 @@[m
+       "integrity": "sha512-CwBLREIQ7LvYFB0WyRvwhq5N5qPhc6PMjD6bYggFlI5YyDgl+0vxq5VHbMOFqLg7hfWzmu8T5Z1QofhmTIhItA==",[m
+       "dev": true[m
+     },[m
+[32m+[m[32m    "emojis-list": {[m
+[32m+[m[32m      "version": "3.0.0",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/emojis-list/-/emojis-list-3.0.0.tgz",[m
+[32m+[m[32m      "integrity": "sha512-/kyM18EfinwXZbno9FyUGeFh87KC8HRQBQGildHZbEuRyWFOmv1U10o9BBp8XVZDVNNuQKyIGIu5ZYAAXJ0V2Q==",[m
+[32m+[m[32m      "dev": true[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "errno": {[m
+[32m+[m[32m      "version": "0.1.8",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/errno/-/errno-0.1.8.tgz",[m
+[32m+[m[32m      "integrity": "sha512-dJ6oBr5SQ1VSd9qkk7ByRgb/1SH4JZjCHSW/mr63/QcXO9zLVxvJ6Oy13nio03rxpSnVDDjFor75SjVeZWPW/A==",[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "optional": true,[m
+[32m+[m[32m      "requires": {[m
+[32m+[m[32m        "prr": "~1.0.1"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+     "error-ex": {[m
+       "version": "1.3.2",[m
+       "resolved": "https://registry.npmjs.org/error-ex/-/error-ex-1.3.2.tgz",[m
+[36m@@ -123,6 +198,18 @@[m
+       "integrity": "sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=",[m
+       "dev": true[m
+     },[m
+[32m+[m[32m    "fast-deep-equal": {[m
+[32m+[m[32m      "version": "3.1.3",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz",[m
+[32m+[m[32m      "integrity": "sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==",[m
+[32m+[m[32m      "dev": true[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "fast-json-stable-stringify": {[m
+[32m+[m[32m      "version": "2.1.0",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/fast-json-stable-stringify/-/fast-json-stable-stringify-2.1.0.tgz",[m
+[32m+[m[32m      "integrity": "sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw==",[m
+[32m+[m[32m      "dev": true[m
+[32m+[m[32m    },[m
+     "find-up": {[m
+       "version": "3.0.0",[m
+       "resolved": "https://registry.npmjs.org/find-up/-/find-up-3.0.0.tgz",[m
+[36m@@ -144,6 +231,13 @@[m
+       "integrity": "sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==",[m
+       "dev": true[m
+     },[m
+[32m+[m[32m    "graceful-fs": {[m
+[32m+[m[32m      "version": "4.2.8",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.8.tgz",[m
+[32m+[m[32m      "integrity": "sha512-qkIilPUYcNhJpd33n0GBXTB1MMPp14TxEsEs0pTrsSVucApsYzW5V+Q8Qxhik6KU3evy+qkAAowTByymK0avdg==",[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "optional": true[m
+[32m+[m[32m    },[m
+     "graphql": {[m
+       "version": "15.5.2",[m
+       "resolved": "https://registry.npmjs.org/graphql/-/graphql-15.5.2.tgz",[m
+[36m@@ -170,6 +264,23 @@[m
+       "integrity": "sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==",[m
+       "dev": true[m
+     },[m
+[32m+[m[32m    "iconv-lite": {[m
+[32m+[m[32m      "version": "0.4.24",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.24.tgz",[m
+[32m+[m[32m      "integrity": "sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==",[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "optional": true,[m
+[32m+[m[32m      "requires": {[m
+[32m+[m[32m        "safer-buffer": ">= 2.1.2 < 3"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "image-size": {[m
+[32m+[m[32m      "version": "0.5.5",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/image-size/-/image-size-0.5.5.tgz",[m
+[32m+[m[32m      "integrity": "sha1-Cd/Uq50g4p6xw+gLiZA3jfnjy5w=",[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "optional": true[m
+[32m+[m[32m    },[m
+     "is-arrayish": {[m
+       "version": "0.2.1",[m
+       "resolved": "https://registry.npmjs.org/is-arrayish/-/is-arrayish-0.2.1.tgz",[m
+[36m@@ -191,12 +302,85 @@[m
+       "integrity": "sha1-o7MKXE8ZkYMWeqq5O+764937ZU8=",[m
+       "dev": true[m
+     },[m
+[32m+[m[32m    "is-what": {[m
+[32m+[m[32m      "version": "3.14.1",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/is-what/-/is-what-3.14.1.tgz",[m
+[32m+[m[32m      "integrity": "sha512-sNxgpk9793nzSs7bA6JQJGeIuRBQhAaNGG77kzYQgMkrID+lS6SlK07K5LaptscDlSaIgH+GPFzf+d75FVxozA==",[m
+[32m+[m[32m      "dev": true[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "jquery": {[m
+[32m+[m[32m      "version": "3.6.0",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/jquery/-/jquery-3.6.0.tgz",[m
+[32m+[m[32m      "integrity": "sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==",[m
+[32m+[m[32m      "dev": true[m
+[32m+[m[32m    },[m
+     "json-parse-better-errors": {[m
+       "version": "1.0.2",[m
+       "resolved": "https://registry.npmjs.org/json-parse-better-errors/-/json-parse-better-errors-1.0.2.tgz",[m
+       "integrity": "sha512-mrqyZKfX5EhL7hvqcV6WG1yYjnjeuYDzDhhcAAUrq8Po85NBQBJP+ZDUT75qZQ98IkUoBqdkExkukOU7Ts2wrw==",[m
+       "dev": true[m
+     },[m
+[32m+[m[32m    "json-schema-traverse": {[m
+[32m+[m[32m      "version": "0.4.1",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/json-schema-traverse/-/json-schema-traverse-0.4.1.tgz",[m
+[32m+[m[32m      "integrity": "sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg==",[m
+[32m+[m[32m      "dev": true[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "json5": {[m
+[32m+[m[32m      "version": "2.2.0",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/json5/-/json5-2.2.0.tgz",[m
+[32m+[m[32m      "integrity": "sha512-f+8cldu7X/y7RAJurMEJmdoKXGB/X550w2Nr3tTbezL6RwEE/iMcm+tZnXeoZtKuOq6ft8+CqzEkrIgx1fPoQA==",[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "requires": {[m
+[32m+[m[32m        "minimist": "^1.2.5"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "klona": {[m
+[32m+[m[32m      "version": "2.0.4",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/klona/-/klona-2.0.4.tgz",[m
+[32m+[m[32m      "integrity": "sha512-ZRbnvdg/NxqzC7L9Uyqzf4psi1OM4Cuc+sJAkQPjO6XkQIJTNbfK2Rsmbw8fx1p2mkZdp2FZYo2+LwXYY/uwIA==",[m
+[32m+[m[32m      "dev": true[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "less": {[m
+[32m+[m[32m      "version": "4.1.1",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/less/-/less-4.1.1.tgz",[m
+[32m+[m[32m      "integrity": "sha512-w09o8tZFPThBscl5d0Ggp3RcrKIouBoQscnOMgFH3n5V3kN/CXGHNfCkRPtxJk6nKryDXaV9aHLK55RXuH4sAw==",[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "requires": {[m
+[32m+[m[32m        "copy-anything": "^2.0.1",[m
+[32m+[m[32m        "errno": "^0.1.1",[m
+[32m+[m[32m        "graceful-fs": "^4.1.2",[m
+[32m+[m[32m        "image-size": "~0.5.0",[m
+[32m+[m[32m        "make-dir": "^2.1.0",[m
+[32m+[m[32m        "mime": "^1.4.1",[m
+[32m+[m[32m        "needle": "^2.5.2",[m
+[32m+[m[32m        "parse-node-version": "^1.0.1",[m
+[32m+[m[32m        "source-map": "~0.6.0",[m
+[32m+[m[32m        "tslib": "^1.10.0"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "less-loader": {[m
+[32m+[m[32m      "version": "7.3.0",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/less-loader/-/less-loader-7.3.0.tgz",[m
+[32m+[m[32m      "integrity": "sha512-Mi8915g7NMaLlgi77mgTTQvK022xKRQBIVDSyfl3ErTuBhmZBQab0mjeJjNNqGbdR+qrfTleKXqbGI4uEFavxg==",[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "requires": {[m
+[32m+[m[32m        "klona": "^2.0.4",[m
+[32m+[m[32m        "loader-utils": "^2.0.0",[m
+[32m+[m[32m        "schema-utils": "^3.0.0"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "loader-utils": {[m
+[32m+[m[32m      "version": "2.0.0",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-2.0.0.tgz",[m
+[32m+[m[32m      "integrity": "sha512-rP4F0h2RaWSvPEkD7BLDFQnvSf+nK+wr3ESUjNTyAGobqrijmW92zc+SO6d4p4B1wh7+B/Jg1mkQe5NYUEHtHQ==",[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "requires": {[m
+[32m+[m[32m        "big.js": "^5.2.2",[m
+[32m+[m[32m        "emojis-list": "^3.0.0",[m
+[32m+[m[32m        "json5": "^2.1.2"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+     "locate-path": {[m
+       "version": "3.0.0",[m
+       "resolved": "https://registry

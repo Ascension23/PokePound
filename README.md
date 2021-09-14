@@ -1,7 +1,7 @@
-# Poké Pound 
+# Poké Talk 
 
 ## Description
-Poké Pound is an application for the Pokémon trainers to connect with other trainers to adopt and rehome their Pokémon.
+Poké Talk is an application for the Pokémon trainers to connect with other trainers to adopt and rehome their Pokémon.
 
 ## Screenshots
 
