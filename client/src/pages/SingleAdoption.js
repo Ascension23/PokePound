@@ -9,6 +9,9 @@ import { QUERY_SINGLE_ADOPTION } from '../utils/queries';
 import { Card, Button, Image, Header } from 'semantic-ui-react'
 import Raiting from '../components/Raiting/Raiting'
 
+import '../../src/components/ProfileList/style.css'
+
+
 const SingleAdoption = () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
   const { adoptionId } = useParams();
@@ -28,7 +31,7 @@ const SingleAdoption = () => {
     <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', paddingTop: '5rem', width: '50rem', marginBottom: '5rem' }}>
       <h1 style={{ display: 'flex', justifyContent: 'center', paddingBottom: '3rem', }}>Discussing {adoption.name} . . .</h1>
         <div style={{ display: 'flex', justifyContent: 'center', }}>
-          <Card style={{ width: '35rem', height: '25rem'}}>
+          <Card style={{ width: '35rem', height: '25rem'}} className="pokeCard__single">
             <Card.Content style={{ paddingTop: '2rem',}}>
               <Image
               size='medium'

@@ -3,6 +3,7 @@ import React from 'react';
 // import { Card, Button } from 'react-bootstrap';
 import { Card, Button, Image } from 'semantic-ui-react'
 // import classes from './index.module.css';
+import '../ProfileList/style.css'
 
 
 const ProfileList = ({ adoptions }) => {
@@ -12,11 +13,11 @@ const ProfileList = ({ adoptions }) => {
   console.log(adoptions)
 
   return (
-    <div>
-      <Card.Group itemsPerRow={2}>
+    <div >
+      <Card.Group itemsPerRow={2} style={{ display: 'flex', justifyContent: 'center', }}>
       {adoptions &&
         adoptions.map((adoption) => (
-          <Card>
+          <Card className="pokeCard__main">
             <Card.Content>
               <Image
               size='medium'
