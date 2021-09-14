@@ -28,14 +28,10 @@ const Profile = () => {
 
   return (
     <div style={{ marginBottom: '5rem' }}>
-      <div className="flex-row justify-center mb-3">
-        <h2 className="col-12 col-md-10 bg-dark text-light p-3 mb-5">
-          {/* Viewing {userParam ? `${user.username}'s` : 'your'} profile. */}
-           { `${user.username}'s` } profile . . .
-        </h2>
-
+      <div className="flex-row justify-center mb-3" >
+ 
         <div className="col-12 col-md-10 mb-5">
-          <h1 style={{ display: 'flex', justifyContent: 'center', paddingBottom: '2rem', }}>Your Pokémon</h1>
+          <h1 style={{ display: 'flex', justifyContent: 'center', paddingTop: '5rem', paddingBottom: '2rem', }}>{ `${user.username}'s` } Posted Discussions</h1>
           <ProfileList
             adoptions={user.adoptions}
             title={`${user.username}'s adoptions...`}
