@@ -25,7 +25,7 @@ const SingleAdoption = () => {
     return <div>Loading...</div>;
   }
   return (
-    <div style={{ display: 'flex', justifyContent: 'center',flexDirection: 'column', paddingTop: '5rem', width: '50rem' }}>
+    <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', paddingTop: '5rem', width: '50rem', marginBottom: '5rem' }}>
       {/* <h3 className="card-header bg-dark text-light p-2 m-0">
         {adoption.name} <br />
         <span style={{ fontSize: '1rem' }}>
