@@ -38,7 +38,7 @@ const ProfileList = ({ adoptions }) => {
               </Card.Description>
             </Card.Content>
             <Card.Content extra style={{ display: 'flex', justifyContent: 'center', }}>     
-            <Button href={`/adoptions/${adoption._id}`} variant="light">View disscusion</Button>
+            <Button href={`/adoptions/${adoption._id}`} variant="light">View discussion</Button>
             </Card.Content>
           </Card>
           

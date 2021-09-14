@@ -14,7 +14,7 @@ const Header = () => {
     <Container>
       <Navbar.Brand href="/" className="mx-3">
       <Image
-        src="./poketalk.png"
+        src="../poketalk.png"
         width="140"
         height="70"
         className=" "
