@@ -26,26 +26,6 @@ const SingleAdoption = () => {
   }
   return (
     <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', paddingTop: '5rem', width: '50rem', marginBottom: '5rem' }}>
-      {/* <h3 className="card-header bg-dark text-light p-2 m-0">
-        {adoption.name} <br />
-        <span style={{ fontSize: '1rem' }}>
-          had this thought on {adoption.createdAt}
-        </span>
-      </h3>
-      <div className="bg-light py-4">
-        <blockquote
-          className="p-4"
-          style={{
-            fontSize: '1.5rem',
-            fontStyle: 'italic',
-            border: '2px dotted #1a1a1a',
-            lineHeight: '1.5',
-          }}
-        >
-          {adoption.description}
-        </blockquote>
-        <img src={adoption.pokemon.gif} />
-      </div> */}
       <h1 style={{ display: 'flex', justifyContent: 'center', paddingBottom: '3rem', }}>Discussing {adoption.name} . . .</h1>
         <div style={{ display: 'flex', justifyContent: 'center', }}>
           <Card style={{ width: '35rem', height: '25rem'}}>
@@ -73,10 +53,7 @@ const SingleAdoption = () => {
           </Card>
         </div>
 
-      <h2
-        // className="p-5 display-inline-block"
-        style={{ display: 'flex', justifyContent: 'center', borderBottom: '1px dotted #1a1a1a', marginTop: '5rem', paddingBottom: '1rem'}} 
-      >
+      <h2 style={{ display: 'flex', justifyContent: 'center', borderBottom: '1px dotted #1a1a1a', marginTop: '5rem', paddingBottom: '1rem'}} >
         Comments
       </h2>
       {/* POLICY CARD */}
@@ -89,21 +66,20 @@ const SingleAdoption = () => {
         </div>
       </Card>
 
-
-
+      {/* what are you thoughts? div */}
+      <div style={{ paddingTop: '1rem', padding: '1rem', borderRadius: '.5rem', border: '1px dotted #1a1a1a', }}>
+        <CommentForm adoptionId={adoption._id} />
+      </div>
+      <div>
+        <Raiting/>
+      </div>
 
       {/* listed comments div */}
       <div >
         <CommentList comments={adoption.comments} />
       </div>
       
-      {/* what are you thoughts? div */}
-      <div className="m-3 p-4" style={{ borderRadius: '.5rem', border: '1px dotted #1a1a1a' }}>
-        <CommentForm adoptionId={adoption._id} />
-      </div>
-      <div>
-        <Raiting/>
-      </div>
+
 
       {/* <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
         <CommentForm adoptionId={adoption._id} />
