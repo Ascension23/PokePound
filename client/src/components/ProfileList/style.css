@@ -1,7 +1,7 @@
 
 
 .ui.card.pokeCard__main {
-    background: linear-gradient(110deg, rgba(255,222,0,1) 34%, rgb(232,255,153) 85%) !important;
+    background: linear-gradient(110deg, rgb(250, 237, 136) 34%, rgb(240, 239, 174) 85%) !important;
     
     display: flex;
     justify-content: center;
