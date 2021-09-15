@@ -26,7 +26,7 @@ const AdoptList = ({ adoptions }) => {
               style={{ display: 'flex', justifyContent: 'center', height: '9rem', paddingTop: '1rem', paddingBottom: '1.5rem'}}
               />
               <Card.Header style={{ display: 'flex', justifyContent: 'center', }} id="fonts">{adoption.name}</Card.Header>
-              <Card.Meta style={{ display: 'flex', justifyContent: 'center', }}id="secFont">Added: {adoption.createdAt}</Card.Meta>
+              <Card.Meta style={{ display: 'flex', justifyContent: 'center', fontSize: '10px', paddingBottom: '.5rem'}}id="fonts">Added: {adoption.createdAt}</Card.Meta>
               <Card.Description style={{ display: 'flex', justifyContent: 'left', }}id="secFont">
               <strong> Species: </strong> {adoption.pokemon.name}
               </Card.Description>

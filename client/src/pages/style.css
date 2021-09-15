@@ -18,7 +18,7 @@ body, .pkmn-group {
 }
 body {
     margin: 0;
-    background: #e2e2e2;
+    background: #bebebe;
     height: 100vh;
     flex-direction: column;
     font-family: 'Press Start 2P', cursive;

@@ -70,7 +70,7 @@ const PlaceForm = ({ pokemons }) => {
                   </Form.Control>
                 </Form.Group>
 
-                <Button variant="primary" type="submit" id="fonts">Submit</Button>
+                <Button variant="danger" type="submit" id="fonts">Submit</Button>
               </Form>
             )}
             {error && (
