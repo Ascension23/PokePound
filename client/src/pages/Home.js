@@ -5,14 +5,14 @@ import { Link } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 import { Image, Container, Button, } from 'semantic-ui-react'
 import '../pages/style.css'
-// import Auth from '../utils/auth';
+import Auth from '../utils/auth';
 
 
 const Home = () => {
-  // const logout = (event) => {
-  //   event.preventDefault();
-  //   Auth.logout();
-  // };
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
   return (
     <main id="fonts">
       <div>
@@ -34,10 +34,19 @@ const Home = () => {
               <div class="pkmn pkmn__fossil"></div>
               <div class="pkmn pkmn__aquatic"></div>
           </div>
+
+					{Auth.loggedIn() ? (
 					<div style={{display: 'flex', justifyContent: 'center', paddingTop: '2rem'}}>
-						<Button color='red' as={Link} to="/signup" id="fonts">Signup</Button>
+						<Button color="danger" href="/me" id="fonts">{Auth.getProfile().data.username}'s profile</Button>
+            <Button color="standard" onClick={logout} id="fonts">Log Out</Button>
+					</div>
+					) : (
+					<div style={{display: 'flex', justifyContent: 'center', paddingTop: '2rem'}}>
+						<Button color='danger' as={Link} to="/signup" id="fonts">Signup</Button>
             <Button color='standard' as={Link} to="/login" id="fonts">Login</Button>
 					</div>
+					)}
+
           {/* {Auth.loggedIn() ? (
         <>
         <h1  style={{ display: 'flex', justifyContent: 'center', paddingBottom: '2rem', }} id="fonts">List Your Pokemon for Discussion</h1>
