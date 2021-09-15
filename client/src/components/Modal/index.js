@@ -49,8 +49,8 @@ const ProfileModal = () => {
   return (
     <>
       <Header icon id="fonts">
-        <Icon name='archive' />
-        Update Profile Information
+        <Icon style={{ color: 'white', paddingBottom: '2.5rem'}} name='address book outline' />
+        <span style={{ color: 'white'}}>Update Profile Information</span>
       </Header>
       <Modal.Content>
         <Form onSubmit={handleFormSubmit}>
