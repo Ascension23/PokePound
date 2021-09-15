@@ -59,15 +59,18 @@ const Profile = () => {
         <div className="col-12 col-md-10 mb-5">
 
           <Grid divided>
+          <Grid.Row style={{ paddingTop: '5rem' }}>
+          <h1 style={{ display: 'flex', justifyContent: 'center', paddingBottom: '2rem', }}>{user.username}'s Profile</h1>
+          </Grid.Row>
           <Grid.Row >
-            <Grid.Column width={5} >
-              <h1 style={{ display: 'flex', justifyContent: 'center', paddingTop: '5rem', paddingBottom: '2rem', }}>{user.username}'s Profile</h1>
+            <Grid.Column width={5} style={{ paddingRight: '2.5rem' }}>
+              <h1 style={{ display: 'flex', justifyContent: 'center', paddingTop: '5rem', paddingBottom: '2rem', }}>User Info</h1>
 
-              <Card style={{ width: '25rem', height: '30rem'}}>
-                <Card.Content>
-                  <Image src={process.env.PUBLIC_URL + '/dittoPlaceholder.png'}  wrapped ui={true} />
+              <Card style={{ width: '25rem', height: '30rem', borderRadius: '1rem'}}>
+                <Card.Content >
+                  <Image src={process.env.PUBLIC_URL + '/dittoPlaceholder.png'}  style={{ borderRadius: '.85rem'}} />
                   {/* <h1 style={{ display: 'flex', justifyContent: 'center', }}>image placeholder</h1> */}
-                  <Card.Header style={{ display: 'flex', justifyContent: 'center', paddingTop: '1rem', paddingBottom: '.25rem' }} >{user.username}</Card.Header>
+                  <Card.Header style={{ display: 'flex', justifyContent: 'center', paddingTop: '2.5rem', paddingBottom: '.25rem' }} >{user.username}</Card.Header>
                   {/* <Card.Meta><user.creat</Card.Meta> */}
                   <Card.Description style={{ display: 'flex', justifyContent: 'center' }}>
                   {user.email}
@@ -90,8 +93,8 @@ const Profile = () => {
               </Card>
 
             </Grid.Column>
-            <Grid.Column width={11}>
-              <h1 style={{ display: 'flex', justifyContent: 'center', paddingTop: '5rem', paddingBottom: '2rem', }}>{ `${user.username}'s` } Posted Discussions</h1>
+            <Grid.Column width={11} >
+              <h1 style={{ display: 'flex', justifyContent: 'center', paddingTop: '5rem', paddingBottom: '2rem', }}>Posted Discussions</h1>
               <ProfileList
                 adoptions={user.adoptions}
                 title={`${user.username}'s adoptions...`}
