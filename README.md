@@ -12,9 +12,16 @@ To use this application you will need to login to the deployed site on Heroku, c
 
 ## Screenshots
 ![Screenshot 2021-09-15 at 09-08-22 Poké Talk](https://user-images.githubusercontent.com/77472152/133469602-41ab5057-dcd3-429a-bacd-d388ea69049e.png)
-![Screen Shot 2021-09-15 at 09 07 55](https://user-images.githubusercontent.com/77472152/133469639-6b867de1-0367-4daf-834b-c6504ca619b5.png)
+**Homepage**<br>
+
+![Screen Shot 2021-09-15 at 09 07 55](https://user-images.githubusercontent.com/77472152/133469639-6b867de1-0367-4daf-834b-c6504ca619b5.png)<br>
+**Mobile View**<br>
+
 ![Screenshot 2021-09-15 at 09-10-15 Poké Talk](https://user-images.githubusercontent.com/77472152/133469930-b2c230c3-80a5-42f6-b847-913da4bc3a0c.png)
+**Community Discussion**<br>
+
 ![Screenshot 2021-09-15 at 09-10-57 Poké Talk](https://user-images.githubusercontent.com/77472152/133469954-c3f9654d-b7a6-4b70-b0fa-cc103665cb36.png)
+**Profile Page**<br>
 
 
 ## Links
