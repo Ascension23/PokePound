@@ -10,7 +10,7 @@ const PokeList = ({ pokemons }) => {
   console.log(pokemons)
 
   return (
-    <div>
+    <div id="fonts">
       {pokemons &&
         pokemons.map((pokemon) => (
 

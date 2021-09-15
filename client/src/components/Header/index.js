@@ -10,7 +10,7 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="lg" id="secFont">
     <Container>
       <Navbar.Brand href="/" className="mx-3">
       <Image
@@ -25,8 +25,8 @@ const Header = () => {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
           {/* <Nav.Link href="/">Home</Nav.Link> */}
-          <Nav.Link href="/adopt">Community Discussion</Nav.Link>
-          <Nav.Link href="/place">Add a Pokémon</Nav.Link>
+          <Nav.Link href="/adopt" style={{fontSize:"18px"}} >Community Discussion</Nav.Link>
+          <Nav.Link href="/place" style={{fontSize:"18px"}}>Add a Pokémon</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     
@@ -37,8 +37,8 @@ const Header = () => {
           <>
           <Nav className="justify-content-end">
           <ButtonGroup className="justify-content-end">
-            <Button href="/me">{Auth.getProfile().data.username}'s profile</Button>
-            <Button variant="secondary" onClick={logout}>Log Out</Button>
+            <Button variant="danger" href="/me" id="fonts">{Auth.getProfile().data.username}'s profile</Button>
+            <Button variant="secondary" onClick={logout} id="fonts">Log Out</Button>
           </ButtonGroup>
           </Nav>
           </>
@@ -46,8 +46,8 @@ const Header = () => {
           <>
           <Nav className="justify-content-end">
           <ButtonGroup className="justify-content-end">
-            <Button variant="secondary" as={Link} to="/signup">Signup</Button>
-            <Button variant="secondary" as={Link} to="/login">Login</Button>
+            <Button variant="danger" as={Link} to="/signup" id="fonts">Signup</Button>
+            <Button variant="secondary" as={Link} to="/login" id="fonts">Login</Button>
           </ButtonGroup>
           </Nav>  
           </>

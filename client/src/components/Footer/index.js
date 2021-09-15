@@ -5,7 +5,7 @@ import Donate  from "../Donate/donate";
 const Footer = () => {
 
   return (
-    <footer className="w-100 mt-auto bg-light pt-4">
+    <footer className="w-100 mt-auto bg-light pt-4" id="fonts">
       <div className="container text-center mb-5" >
         <h4>
         <p>

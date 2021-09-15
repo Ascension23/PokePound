@@ -28,8 +28,8 @@ const SingleAdoption = () => {
     return <div>Loading...</div>;
   }
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', paddingTop: '5rem', width: '50rem', marginBottom: '5rem' }}>
-      <h1 style={{ display: 'flex', justifyContent: 'center', paddingBottom: '3rem', }}>Discussing {adoption.name} . . .</h1>
+    <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', paddingTop: '5rem', width: '50rem', marginBottom: '5rem' }} id="fonts">
+      <h1 style={{ display: 'flex', justifyContent: 'center', paddingBottom: '3rem', }}id="fonts">Discussing {adoption.name} . . .</h1>
         <div style={{ display: 'flex', justifyContent: 'center', }}>
           <Card style={{ width: '35rem', height: '25rem'}} className="pokeCard__single">
             <Card.Content style={{ paddingTop: '2rem',}}>
@@ -41,31 +41,31 @@ const SingleAdoption = () => {
               centered
               style={{ display: 'flex', justifyContent: 'center', height: '13rem', paddingTop: '1rem', paddingBottom: '1.5rem'}}
               />
-              <Card.Header style={{ display: 'flex', justifyContent: 'center', }}>{adoption.name}</Card.Header>
+              <Card.Header style={{ display: 'flex', justifyContent: 'center', }}id="fonts">{adoption.name}</Card.Header>
               <Card.Meta style={{ display: 'flex', justifyContent: 'center', }}>Added: {adoption.createdAt}</Card.Meta>
-              <Card.Description style={{ display: 'flex', justifyContent: 'center', }}>
+              <Card.Description style={{ display: 'flex', justifyContent: 'center', fontSize: '18px'}}id="secFont">
               Species: {adoption.pokemon.name}
               </Card.Description>
-              <Card.Description style={{ display: 'flex', justifyContent: 'center', }}>
+              <Card.Description style={{ display: 'flex', justifyContent: 'center', fontSize: '18px'}}id="secFont">
               Description: {adoption.description}
               </Card.Description>
-              <Card.Description style={{ display: 'flex', justifyContent: 'center', }}>
+              <Card.Description style={{ display: 'flex', justifyContent: 'center', fontSize: '18px'}}id="secFont">
               Level: {adoption.pokemon.level}
               </Card.Description>
             </Card.Content>
           </Card>
         </div>
 
-      <h2 style={{ display: 'flex', justifyContent: 'center', borderBottom: '1px dotted #1a1a1a', marginTop: '5rem', paddingBottom: '1rem'}} >
+      <h2 style={{ display: 'flex', justifyContent: 'center', borderBottom: '1px dotted #1a1a1a', marginTop: '5rem', paddingBottom: '1rem'}} id='fonts'>
         Comments
       </h2>
       {/* POLICY CARD */}
       <Card style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem', marginBottom: '2.5rem', width: '50rem', backgroundColor: 'lightgrey'}}>
         <div class="content" >
           <Header>
-          <h3 style={{ display: 'flex', justifyContent: 'center' }}>Poké Talk Comment Policy</h3>
+          <h3 style={{ display: 'flex', justifyContent: 'center' }}id='fonts'>Poké Talk Comment Policy</h3>
           </Header>
-          <p className="card-body">We respect discourse and you don't have to agree with the points made, but please be constructive.</p>
+          <p className="card-body"id='secFont'>We respect discourse and you don't have to agree with the points made, but please be constructive.</p>
         </div>
       </Card>
 

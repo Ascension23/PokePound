@@ -54,14 +54,14 @@ const Profile = () => {
 
   //TEST Multiple columns and Modal and updating profile
   return (
-    <div style={{ marginBottom: '5rem' }}>
+    <div style={{ marginBottom: '5rem' }} id="fonts">
       <div className="flex-row justify-center mb-3" > 
         <div className="col-12 col-md-10 mb-5">
 
           <Grid divided>
           <Grid.Row >
             <Grid.Column width={5} >
-              <h1 style={{ display: 'flex', justifyContent: 'center', paddingTop: '5rem', paddingBottom: '2rem', }}>{user.username}'s Profile</h1>
+              <h1 style={{ display: 'flex', justifyContent: 'center', paddingTop: '5rem', paddingBottom: '2rem', }}id='fonts'>{user.username}'s Profile</h1>
 
               <Card style={{ width: '25rem', height: '30rem'}}>
                 <Card.Content>
@@ -81,7 +81,7 @@ const Profile = () => {
                     onOpen={() => setOpen(true)}
                     open={open}
                     size='small'
-                    trigger={<Button>Update Info</Button>}
+                    trigger={<Button id='fonts' style={{ fontSize: '12'}}>Update Info</Button>}
                     style={{ top: '20rem', bottom: 'auto', right: 'auto', left: 'auto' }}
                   >
                     <ProfileModal />
@@ -91,7 +91,7 @@ const Profile = () => {
 
             </Grid.Column>
             <Grid.Column width={11}>
-              <h1 style={{ display: 'flex', justifyContent: 'center', paddingTop: '5rem', paddingBottom: '2rem', }}>{ `${user.username}'s` } Posted Discussions</h1>
+              <h1 style={{ display: 'flex', justifyContent: 'center', paddingTop: '5rem', paddingBottom: '2rem', }}id='fonts'>Your Posted Discussions</h1>
               <ProfileList
                 adoptions={user.adoptions}
                 title={`${user.username}'s adoptions...`}

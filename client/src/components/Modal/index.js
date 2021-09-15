@@ -48,7 +48,7 @@ const ProfileModal = () => {
 
   return (
     <>
-      <Header icon>
+      <Header icon id="fonts">
         <Icon name='archive' />
         Update Profile Information
       </Header>

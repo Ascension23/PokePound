@@ -5,6 +5,8 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+ @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 html {
   line-height: 1.15;
   /* 1 */
@@ -356,11 +358,28 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  /* font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol';
   font-size: 16px;
+  color: #1a1a1a; */
+}
+
+body #fonts{
+  font-family: 'Press Start 2P', cursive;
+  /* font-size: 14px; */
   color: #1a1a1a;
+  /* letter-spacing: 1px */
+}
+
+body #secFont{
+  font-family: 'Roboto Slab', serif;
+  color: #1a1a1a;
+  /* letter-spacing: 1px */
+}
+
+body #secFont navlink{
+  font-size: 24px;
 }
 
 h1,
@@ -375,7 +394,7 @@ h6 {
 }
 
 h1 {
-  font-size: 2.25rem;
+  font-size: 2rem;
 }
 
 h2 {
@@ -891,7 +910,7 @@ a:hover {
 }
 
 .text-danger {
-  color: #e64c66 !important;
+  color: #ce2a45 !important;
 }
 
 .text-default {
@@ -907,7 +926,7 @@ a:hover {
 }
 
 .text-white {
-  color: #ffffff !important;
+  color: #e7e5e5 !important;
 }
 
 .text-black {
@@ -940,7 +959,7 @@ a:hover {
 }
 
 .bg-white {
-  background-color: #ffffff !important;
+  background-color: #e7e5e5ff !important;
 }
 
 .bg-black {
@@ -1021,8 +1040,8 @@ a:hover {
 }
 
 .btn.btn-danger {
-  background-color: #e64c66;
-  color: #ffffff;
+  background-color: #ee5c5c;
+  color: #e7e5e5ff;
 }
 
 .btn.btn-danger:hover {
@@ -1031,7 +1050,7 @@ a:hover {
 
 .btn.btn-info {
   background-color: #1bbc9b;
-  color: #ffffff;
+  color: #e7e5e5ff;
 }
 
 .btn.btn-info:hover {
@@ -1057,7 +1076,7 @@ a:hover {
 }
 
 .btn.btn-white {
-  background-color: #ffffff;
+  background-color: #e7e5e5ff;
   color: #1a1a1a;
 }
 
@@ -1067,7 +1086,7 @@ a:hover {
 
 .btn.btn-black {
   background-color: #000000;
-  color: #ffffff;
+  color: #e7e5e5ff;
 }
 
 .btn.btn-black:hover {
@@ -1076,7 +1095,7 @@ a:hover {
 
 .btn.btn-link {
   background-color: #1b89bc;
-  color: #ffffff;
+  color: #e7e5e5ff;
 }
 
 .btn.btn-link:hover {
@@ -1146,7 +1165,7 @@ form .form-input {
   width: 100%;
   padding: 0.75rem;
   color: #1a1a1a;
-  background-color: #ffffff;
+  background-color: #e7e5e5ff;
   margin: 0.625rem 0;
   font-size: 1.2rem;
   border: 1px solid #484848;

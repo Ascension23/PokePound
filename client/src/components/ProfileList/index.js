@@ -36,7 +36,7 @@ const ProfileList = ({ adoptions }) => {
   };
 
   return (
-    <div >
+    <div id="secFont">
       <Card.Group itemsPerRow={2} style={{ display: 'flex', justifyContent: 'center', }}>
       {adoptions &&
         adoptions.map((adoption) => (
@@ -48,7 +48,7 @@ const ProfileList = ({ adoptions }) => {
               wrapped ui={false}
               style={{ display: 'flex', justifyContent: 'center', height: '7rem', paddingTop: '1rem', paddingBottom: '1.5rem'}}
               />
-              <Card.Header style={{ display: 'flex', justifyContent: 'center', }}>{adoption.name}</Card.Header>
+              <Card.Header style={{ display: 'flex', justifyContent: 'center', }}id="fonts">{adoption.name}</Card.Header>
               <Card.Meta style={{ display: 'flex', justifyContent: 'center', }}>Added: {adoption.createdAt}</Card.Meta>
               <Card.Description style={{ display: 'flex', justifyContent: 'center', }}>
               Species: {adoption.pokemon.name}

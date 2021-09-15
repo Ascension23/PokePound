@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Form, Select } from 'react-bootstrap';
+// import { Button, Form, Select } from 'react-bootstrap';
 
 import PlaceForm from '../components/Place';
 import { useQuery } from '@apollo/client'; // querying pokemon for dropdown shit . . .
@@ -12,7 +12,7 @@ import Auth from '../utils/auth';
 
 const Place = () => {
 
-  const { loading, data } = useQuery(QUERY_POKEMONS);
+  const { data } = useQuery(QUERY_POKEMONS);
   const pokemons = data?.pokemons || [];
 
   // return (
@@ -43,16 +43,16 @@ const Place = () => {
       <div className="col-12 col-md-8 mb-3">
         {Auth.loggedIn() ? (
         <>
-        <h1 style={{ display: 'flex', justifyContent: 'center', paddingBottom: '2rem', }}>List Your Pokemon for Discussion</h1>
+        <h1  style={{ display: 'flex', justifyContent: 'center', paddingBottom: '2rem', }} id="fonts">List Your Pokemon for Discussion</h1>
           <PlaceForm
             pokemons={pokemons}
           />
         </>
         ) : (
         <>
-          <h1 style={{ display: 'flex', justifyContent: 'center', paddingBottom: '2rem', }}>List Your Pokemon for Discussion</h1>
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <p>Please{' '}<Link to="/login">login</Link> or <Link to="/signup">signup</Link> to list a pokemon for discussion . . .</p>
+          <h1 style={{ display: 'flex', justifyContent: 'center', paddingBottom: '2rem', }} id="fonts">List Your Pokemon for Discussion</h1>
+          <div style={{ display: 'flex', justifyContent: 'center' }} id="fonts">
+            <p id="fonts">Please{' '}<Link to="/login">login</Link> or <Link to="/signup">signup</Link> to list a pokemon for discussion . . .</p>
           </div>
         </>
       )}

@@ -41,8 +41,8 @@ const CommentForm = ({ adoptionId }) => {
   };
 
   return (
-    <div >
-      <h3 >What are your thoughts on this pokemon?</h3>
+    <div id="fonts">
+      <h3 id='fonts'>What are your thoughts on this pokemon?</h3>
       {Auth.loggedIn() ? (
         <>
         <Form onSubmit={handleFormSubmit} reply>
@@ -55,7 +55,7 @@ const CommentForm = ({ adoptionId }) => {
         </Form>
         </>
       ) : (
-        <p>
+        <p id='secFont'>
           You need to be logged in to share your thoughts. Please{' '}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>

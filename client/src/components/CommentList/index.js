@@ -5,12 +5,12 @@ import { Card, Button, Image, Header, } from 'semantic-ui-react'
 
 const CommentList = ({ comments = [] }) => {
   if (!comments.length) {
-    return <div className="flex-row my-4" style={{ paddingTop: '3rem' }}> <h3>No Comments Yet . . .</h3> </div>;
+    return <div className="flex-row my-4" style={{ paddingTop: '3rem' }}> <h3 id='fonts'>No Comments Yet . . .</h3> </div>;
   }
 
   return (
     <>
-      <div className="flex-row my-4" >
+      <div className="flex-row my-4" id="fonts">
         {comments &&
           comments.map((comment) => (
             <Card key={comment._id} style={{ width: '50rem'}}>

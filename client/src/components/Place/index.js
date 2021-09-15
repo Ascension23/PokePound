@@ -40,13 +40,13 @@ const PlaceForm = ({ pokemons }) => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
+    <main className="flex-row justify-center mb-4" id="fonts">
       <div className="col-10 col-lg-8"  >
         <div className="card" >
           <h4 className="card-header bg-dark text-light p-2">Describe Your Pokémon</h4>
           <div className="card-body">
             {data ? (
-              <p>
+              <p id="secFont">
                 Success! You may see your Pokémon{' '}
                 <Link to="/adopt">on the discussion page.</Link>
               </p>
@@ -70,7 +70,7 @@ const PlaceForm = ({ pokemons }) => {
                   </Form.Control>
                 </Form.Group>
 
-                <Button variant="primary" type="submit">Submit</Button>
+                <Button variant="primary" type="submit" id="fonts">Submit</Button>
               </Form>
             )}
             {error && (
