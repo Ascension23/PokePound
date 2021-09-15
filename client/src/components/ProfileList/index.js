@@ -61,9 +61,9 @@ const ProfileList = ({ adoptions }) => {
               </Card.Description>
             </Card.Content>
             <Card.Content extra style={{ display: 'flex', justifyContent: 'center', paddingTop: '1.15rem' }}>     
-            <Button size='tiny' href={`/adoptions/${adoption._id}`} variant="light">View discussion</Button>
+            <Button size='tiny' href={`/adoptions/${adoption._id}`} variant="light" >View discussion</Button>
             {/* delete button  */}
-            <Button color='red' size='tiny' onClick={handleDelete} AdoptionId={adoption._id} variant="light">Delete discussion</Button>
+            <Button color='red' size='tiny' onClick={handleDelete} AdoptionId={adoption._id} variant="danger">Delete discussion</Button>
             </Card.Content>
           </Card>
           

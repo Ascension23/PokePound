@@ -56,11 +56,11 @@ const ProfileModal = () => {
         <Form onSubmit={handleFormSubmit}>
           <Form.Field>
             <label>Username</label>
-            <input name="username" type="text" value={formState.name} placeholder='Username' onChange={handleChange} />
+            <input name="username" type="text" value={formState.name} placeholder='Enter Updated Username . . .' onChange={handleChange} />
           </Form.Field>
           <Form.Field>
             <label>Email</label>
-            <input name="email" type="text" value={formState.email} placeholder='Email' onChange={handleChange} />
+            <input name="email" type="text" value={formState.email} placeholder='Enter Updated Email . . .' onChange={handleChange} />
           </Form.Field>
           {/* <Button type='submit'>Submit</Button> */}
           <Modal.Actions>
@@ -70,12 +70,6 @@ const ProfileModal = () => {
           </Modal.Actions>
         </Form>
       </Modal.Content>
-
-      {/* <Modal.Actions>
-        <Button type="submit" color='green' inverted onClick={() => setOpen(false)}>
-          <Icon name='checkmark' /> Update
-        </Button>
-      </Modal.Actions> */}
     </>
   );
 
