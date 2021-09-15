@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 // import { useQuery } from '@apollo/client';
 // import { Link } from 'react-router-dom';
 import { Image, Container, Button, } from 'semantic-ui-react'
@@ -32,6 +34,10 @@ const Home = () => {
               <div class="pkmn pkmn__fossil"></div>
               <div class="pkmn pkmn__aquatic"></div>
           </div>
+					<div style={{display: 'flex', justifyContent: 'center', paddingTop: '2rem'}}>
+						<Button color='red' as={Link} to="/signup" id="fonts">Signup</Button>
+            <Button color='standard' as={Link} to="/login" id="fonts">Login</Button>
+					</div>
           {/* {Auth.loggedIn() ? (
         <>
         <h1  style={{ display: 'flex', justifyContent: 'center', paddingBottom: '2rem', }} id="fonts">List Your Pokemon for Discussion</h1>

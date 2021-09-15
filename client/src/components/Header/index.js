@@ -44,12 +44,12 @@ const Header = () => {
           </>
         ) : (
           <>
-          <Nav className="justify-content-end">
+          {/* <Nav className="justify-content-end">
           <ButtonGroup className="justify-content-end">
             <Button variant="danger" as={Link} to="/signup" id="fonts">Signup</Button>
             <Button variant="secondary" as={Link} to="/login" id="fonts">Login</Button>
           </ButtonGroup>
-          </Nav>  
+          </Nav>   */}
           </>
         )}
     </Container>  
