@@ -14,11 +14,13 @@ const Home = () => {
   return (
     <main id="fonts">
       <div>
-      <Container className="homePage" style={{ justifyContent: 'center', }}> 
-        <Image src='/poketalk.png' fluid size='large' style={{ display: 'flex', justifyContent: 'center', }}/>
+      <Container className="homePage" style={{ justifyContent: 'center' }}> 
+			<div style={{ display: 'flex', justifyContent: 'center' }}>
+			<Image src='/poketalk.png' fluid size='large' />
+			</div>
         <p class="pkmn-text">A world of dreams and adventures with Pokemon awaits! Let's go!</p>
           
-          <div class="pkmn-group">
+          <div class="pkmn-group" style={{display: 'flex', justifyContent: 'center'}}>
               <div class="pkmn pkmn__pikachu"></div>
               <div class="pkmn pkmn__quadruped"></div>
               <div class="pkmn pkmn__snake"></div>
