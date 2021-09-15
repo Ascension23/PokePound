@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Button, Container, Nav, ButtonGroup } from 'react-bootstrap';
-// import Auth from '../../utils/auth';
+import Auth from '../../utils/auth';
 import Image from 'react-bootstrap/Image'
 
 const Header = () => {
-  // const logout = (event) => {
-  //   event.preventDefault();
-  //   Auth.logout();
-  // };
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
   return (
     <Navbar bg="light" expand="lg" id="secFont">
     <Container>
@@ -33,7 +33,7 @@ const Header = () => {
 
 {/* login/signup buttons */}
 
-        {/* {Auth.loggedIn() ? (
+         {Auth.loggedIn() ? (
           <>
           <Nav className="justify-content-end">
           <ButtonGroup className="justify-content-end">
@@ -43,15 +43,15 @@ const Header = () => {
           </Nav>
           </>
         ) : (
-          <> */}
-          {/* <Nav className="justify-content-end">
+          <> 
+           <Nav className="justify-content-end">
           <ButtonGroup className="justify-content-end">
             <Button variant="danger" as={Link} to="/signup" id="fonts">Signup</Button>
             <Button variant="secondary" as={Link} to="/login" id="fonts">Login</Button>
           </ButtonGroup>
-          </Nav>   */}
-          {/* </> */}
-        {/* )} */}
+          </Nav>   
+           </> 
+         )} 
     </Container>  
   </Navbar>
   );
