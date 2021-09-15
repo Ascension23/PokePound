@@ -29,7 +29,7 @@ const SingleAdoption = () => {
   }
   return (
     <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', paddingTop: '5rem', width: '50rem', marginBottom: '5rem' }} id="fonts">
-      <h1 style={{ display: 'flex', justifyContent: 'center', paddingBottom: '3rem', }}id="fonts">Discussing {adoption.name} . . .</h1>
+      <h1 style={{ display: 'flex', justifyContent: 'center', paddingBottom: '3rem', }}id="fonts">Discussing {adoption.name}...</h1>
         <div style={{ display: 'flex', justifyContent: 'center',  }}>
           <Card style={{ display: 'flex', width: '35rem', height: '25rem'}} className="pokeCard__single">
             <Card.Content style={{ paddingTop: '2rem',  }}>
