@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 
 // import { useQuery } from '@apollo/client';
 // import { Link } from 'react-router-dom';
-import { Image, Container, Button, } from 'semantic-ui-react'
+import { Button, } from 'react-bootstrap';
+
+import { Image, Container, } from 'semantic-ui-react'
 import '../pages/style.css'
 // import Auth from '../utils/auth';
 
@@ -35,8 +37,8 @@ const Home = () => {
               <div class="pkmn pkmn__aquatic"></div>
           </div>
 					<div style={{display: 'flex', justifyContent: 'center', paddingTop: '2rem'}}>
-						<Button color='red' as={Link} to="/signup" id="fonts">Signup</Button>
-            <Button color='standard' as={Link} to="/login" id="fonts">Login</Button>
+						<Button variant="danger" as={Link} to="/signup" id="fonts">Signup</Button>
+            <Button variant="secondary" as={Link} to="/login" id="fonts">Login</Button>
 					</div>
           {/* {Auth.loggedIn() ? (
         <>
