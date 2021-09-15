@@ -20,7 +20,7 @@
   
   display: flex;
   justify-content: center;
-  /* height: 400px; */
+  height: 33rem !important; 
   width: 40rem !important;
   padding: 1em !important;
   border-radius: 15px !important;  
