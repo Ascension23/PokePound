@@ -17,7 +17,7 @@ const AdoptList = ({ adoptions }) => {
       <Card.Group itemsPerRow={2} style={{ display: 'flex', justifyContent: 'center' }}>
       {adoptions &&
         adoptions.map((adoption) => (
-          <Card className="pokeCard__main ">
+          <Card className="pokeCard__main " style={{ height: '25rem'}}>
             <Card.Content>
               <Image
               size='medium'
