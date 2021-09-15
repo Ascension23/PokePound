@@ -30,9 +30,9 @@ const SingleAdoption = () => {
   return (
     <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', paddingTop: '5rem', width: '50rem', marginBottom: '5rem' }} id="fonts">
       <h1 style={{ display: 'flex', justifyContent: 'center', paddingBottom: '3rem', }}id="fonts">Discussing {adoption.name} . . .</h1>
-        <div style={{ display: 'flex', justifyContent: 'center', }}>
-          <Card style={{ width: '35rem', height: '25rem'}} className="pokeCard__single">
-            <Card.Content style={{ paddingTop: '2rem',}}>
+        <div style={{ display: 'flex', justifyContent: 'center',  }}>
+          <Card style={{ display: 'flex', width: '35rem', height: '25rem'}} className="pokeCard__single">
+            <Card.Content style={{ paddingTop: '2rem',  }}>
               <Image
               size='medium'
               src={adoption.pokemon.gif}
@@ -41,16 +41,16 @@ const SingleAdoption = () => {
               centered
               style={{ display: 'flex', justifyContent: 'center', height: '13rem', paddingTop: '1rem', paddingBottom: '1.5rem'}}
               />
-              <Card.Header style={{ display: 'flex', justifyContent: 'center', }}id="fonts">{adoption.name}</Card.Header>
+              <Card.Header style={{ display: 'flex', justifyContent: 'center', paddingTop: '1rem', paddingBottom: '1' }}id="fonts">{adoption.name}</Card.Header>
               <Card.Meta style={{ display: 'flex', justifyContent: 'center', }}>Added: {adoption.createdAt}</Card.Meta>
-              <Card.Description style={{ display: 'flex', justifyContent: 'center', fontSize: '18px'}}id="secFont">
-              Species: {adoption.pokemon.name}
+              <Card.Description style={{ display: 'flex', justifyContent: 'left', fontSize: '18px'}}id="secFont">
+              <strong> Species:</strong> {adoption.pokemon.name}
               </Card.Description>
-              <Card.Description style={{ display: 'flex', justifyContent: 'center', fontSize: '18px'}}id="secFont">
-              Description: {adoption.description}
+              <Card.Description style={{ display: 'flex', justifyContent: 'left', fontSize: '18px', marginBottom: '1rem', paddingTop: '1rem', paddingBottom: '1'}}id="secFont">
+              <strong>Description:</strong> {adoption.description}
               </Card.Description>
-              <Card.Description style={{ display: 'flex', justifyContent: 'center', fontSize: '18px'}}id="secFont">
-              Level: {adoption.pokemon.level}
+              <Card.Description style={{ display: 'flex', justifyContent: 'left', fontSize: '18px'}}id="secFont">
+              <strong>Level:</strong> {adoption.pokemon.level}
               </Card.Description>
             </Card.Content>
           </Card>

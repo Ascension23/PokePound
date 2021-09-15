@@ -14,7 +14,7 @@ const PokeList = ({ pokemons }) => {
       {pokemons &&
         pokemons.map((pokemon) => (
 
-          <Card >
+          <Card style={{display: 'flex',}}>
           {/* <Card.Img variant="top" src={pokemon.name} /> */}
           <Card.Body>
             <Card.Subtitle className="mb-2 text-muted" >added: {pokemon.createdAt}</Card.Subtitle>

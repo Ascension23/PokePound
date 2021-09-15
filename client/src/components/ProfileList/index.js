@@ -1,7 +1,7 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
 // import { Card, Button } from 'react-bootstrap';
-import { Card, Button, Image } from 'semantic-ui-react'
+import { Card, Button, Image, Segment } from 'semantic-ui-react'
 // import classes from './index.module.css';
 import '../ProfileList/style.css'
 
@@ -40,30 +40,30 @@ const ProfileList = ({ adoptions }) => {
       <Card.Group itemsPerRow={2} style={{ display: 'flex', justifyContent: 'center', }}>
       {adoptions &&
         adoptions.map((adoption) => (
-          <Card className="pokeCard__main">
+          <Card className="pokeCard__main" style={{ display: 'flex',}}>
             <Card.Content>
               <Image
-              size='medium'
+              size='small'
               src={adoption.pokemon.gif}
               wrapped ui={false}
               style={{ display: 'flex', justifyContent: 'center', height: '7rem', paddingTop: '1rem', paddingBottom: '1.5rem'}}
               />
               <Card.Header style={{ display: 'flex', justifyContent: 'center', }}id="fonts">{adoption.name}</Card.Header>
               <Card.Meta style={{ display: 'flex', justifyContent: 'center', }}>Added: {adoption.createdAt}</Card.Meta>
-              <Card.Description style={{ display: 'flex', justifyContent: 'center', }}>
-              Species: {adoption.pokemon.name}
+              <Card.Description style={{ display: 'flex', justifyContent: 'left', }}>
+              <strong>Species:</strong> {adoption.pokemon.name}
               </Card.Description>
-              <Card.Description style={{ display: 'flex', justifyContent: 'center', }}>
-              Description: {adoption.description}
+              <Card.Description style={{ display: 'flex', justifyContent: 'left', }}>
+              <strong>Description:</strong> {adoption.description}
               </Card.Description>
-              <Card.Description style={{ display: 'flex', justifyContent: 'center' }}>
-              Level: {adoption.pokemon.level}
+              <Card.Description style={{ display: 'flex', justifyContent: 'left' }}>
+              <strong>Level:</strong> {adoption.pokemon.level}
               </Card.Description>
             </Card.Content>
-            <Card.Content extra style={{ display: 'flex', justifyContent: 'center', paddingTop: '1.15rem' }}>     
-            <Button size='tiny' href={`/adoptions/${adoption._id}`} variant="light" >View discussion</Button>
+            <Card.Content className="disButPro" extra style={{ display: 'flex', justifyContent: 'center', paddingTop: '1.15rem' }} >     
+            <Button className="discussPro1" size='small' href={`/adoptions/${adoption._id}`} variant="light" >View discussion</Button>
             {/* delete button  */}
-            <Button color='red' size='tiny' onClick={handleDelete} AdoptionId={adoption._id} variant="danger">Delete discussion</Button>
+            <Button className="discussPro" size='small' onClick={handleDelete} AdoptionId={adoption._id} variant="danger" style={{backgroundColor:'#ee5c5c',}}>Delete discussion</Button>
             </Card.Content>
           </Card>
           
