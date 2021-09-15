@@ -39,8 +39,8 @@ const Home = () => {
 
 					{Auth.loggedIn() ? (
 					<div style={{display: 'flex', justifyContent: 'center', paddingTop: '2rem'}}>
-						<Button color="danger" href="/me" id="fonts">{Auth.getProfile().data.username}'s profile</Button>
-            <Button color="standard" onClick={logout} id="fonts">Log Out</Button>
+						<Button variant="danger" href="/me" id="fonts">{Auth.getProfile().data.username}'s profile</Button>
+            <Button variant="secondary" onClick={logout} id="fonts">Log Out</Button>
 					</div>
 					) : (
 					<div style={{display: 'flex', justifyContent: 'center', paddingTop: '2rem'}}>
