@@ -6,6 +6,8 @@ import { useMutation } from '@apollo/client';
 import { ADD_COMMENT } from '../../utils/mutations';
 
 import Auth from '../../utils/auth';
+import Raiting from '../../components/Raiting/Raiting'
+
 
 const CommentForm = ({ adoptionId }) => {
 
@@ -42,7 +44,8 @@ const CommentForm = ({ adoptionId }) => {
 
   return (
     <div id="fonts">
-      <h3 id='fonts'>What are your thoughts on this pokemon?</h3>
+      <h3 id='fonts' style={{ marginBottom: '.1rem'}} >What are your thoughts on this pokemon?</h3>
+      <span style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '1rem'}}><Raiting /></span>
       {Auth.loggedIn() ? (
         <>
         <Form onSubmit={handleFormSubmit} reply>
@@ -50,8 +53,11 @@ const CommentForm = ({ adoptionId }) => {
             name="commentText"
             placeholder="Add your comment..."
             value={formState.commentText}
-            onChange={handleChange} />
+            onChange={handleChange} />        
+
           <Button type="submit" content='Add Reply' labelPosition='left' icon='edit' basic />
+          
+          
         </Form>
         </>
       ) : (

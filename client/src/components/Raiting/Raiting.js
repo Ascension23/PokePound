@@ -3,7 +3,7 @@ import { Rating } from 'semantic-ui-react'
 // import { CgPokemon } from "react-icons/cg";
 
 const RatingExampleStar = () => (
-  <Rating icon='heart' defaultRating={1} maxRating={4} />
+  <Rating icon='heart' defaultRating={1} maxRating={4} size='tiny' />
 )
 
 export default RatingExampleStar

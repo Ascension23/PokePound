@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Card, Button, Image, Header, } from 'semantic-ui-react'
+import Raiting from '../../components/Raiting/Raiting'
 
 
 const CommentList = ({ comments = [] }) => {
@@ -17,9 +18,11 @@ const CommentList = ({ comments = [] }) => {
             <div class="content" >
               <Header >
               {comment.commentAuthor} {' '}
-                <span style={{ fontSize: '0.825rem' }}>
+                <span style={{ fontSize: '0.825rem', marginBottom: '.1rem' }} >
                   commented on {comment.createdAt}
                 </span>
+                <span style={{ display: 'flex', justifyContent: 'flex-end' }}><Raiting /></span>
+
               </Header>
 
               <p className="card-body">{comment.commentText}</p>

@@ -73,9 +73,9 @@ const SingleAdoption = () => {
       <div style={{ paddingTop: '1rem', padding: '1rem', borderRadius: '.5rem', border: '1px dotted #1a1a1a', }}>
         <CommentForm adoptionId={adoption._id} />
       </div>
-      <div>
+      {/* <div>
         <Raiting/>
-      </div>
+      </div> */}
 
       {/* listed comments div */}
       <div >
