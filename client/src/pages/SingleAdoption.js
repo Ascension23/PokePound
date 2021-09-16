@@ -43,13 +43,13 @@ const SingleAdoption = () => {
               />
               <Card.Header style={{ display: 'flex', justifyContent: 'center', paddingTop: '1rem', paddingBottom: '1' }}id="fonts">{adoption.name}</Card.Header>
               <Card.Meta style={{ display: 'flex', justifyContent: 'center', }}>Added: {adoption.createdAt}</Card.Meta>
-              <Card.Description style={{ display: 'flex', justifyContent: 'left', fontSize: '18px'}}id="secFont">
+              <Card.Description style={{ display: 'flex', justifyContent: 'left', fontSize: '18px', paddingLeft: '2rem'}}id="secFont">
               <strong> Species:</strong> {adoption.pokemon.name}
               </Card.Description>
-              <Card.Description style={{ display: 'flex', justifyContent: 'left', fontSize: '18px', marginBottom: '1rem', paddingTop: '1rem', paddingBottom: '1'}}id="secFont">
+              <Card.Description style={{ display: 'flex', justifyContent: 'left', fontSize: '18px', paddingLeft: '2rem', marginBottom: '1rem', paddingTop: '1rem', paddingBottom: '1'}}id="secFont">
               <strong>Description:</strong> {adoption.description}
               </Card.Description>
-              <Card.Description style={{ display: 'flex', justifyContent: 'left', fontSize: '18px'}}id="secFont">
+              <Card.Description style={{ display: 'flex', justifyContent: 'left', fontSize: '18px', paddingLeft: '2rem'}}id="secFont">
               <strong>Level:</strong> {adoption.pokemon.level}
               </Card.Description>
             </Card.Content>
