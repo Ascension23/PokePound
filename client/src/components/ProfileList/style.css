@@ -1,0 +1,61 @@
+
+
+.ui.card.pokeCard__main {
+    background: linear-gradient(110deg, rgb(250, 237, 136) 34%, rgb(240, 239, 174) 85%) !important;
+    
+    display: flex;
+    justify-content: center;
+    /* height: 400px; */
+    width: 300px !important;
+    padding: .5em !important;
+    border-radius: 15px !important;  
+    margin: 5px !important;
+    /* text-align: left; */
+  
+    box-shadow: 0px 5px 20px -10px #111111 !important;
+  }
+
+.ui.card.pokeCard__single {
+  background: linear-gradient(110deg, rgb(250, 237, 136) 34%, rgb(240, 239, 174) 85%) !important;
+  
+  display: flex;
+  justify-content: center;
+  height: 33rem !important; 
+  width: 40rem !important;
+  padding: 1em !important;
+  border-radius: 15px !important;  
+  margin: 10px !important;
+  /* text-align: left; */
+
+  box-shadow: 0px 5px 20px -10px #111111 !important;
+}
+.ui.card.disButPro {
+  display: inline-block;
+  padding: 1em;
+}
+.ui.button.discussPro {
+  /* width: 50%; */
+  display: inline-block;
+  margin-right: 0;
+  background-color: rgb(255, 186, 129);
+  position: absolute;
+  right:    0;
+  bottom:   0;
+  border-radius: 12px;
+  border: 2px solid rgb(252, 225, 72);
+}
+.ui.button.discussPro1 {
+  /* width: 50%; */
+  display: inline-block;
+  margin-right: 0;
+  background-color: rgb(255, 186, 129);
+  position: absolute;
+  left:    0;
+  bottom:   0;
+  border-radius: 12px;
+  border: 2px solid rgb(252, 225, 72);
+}
+.ui.button.discussPro1:hover{
+  background-color: #ffed88;
+  color:rgb(0, 0, 0);
+}
